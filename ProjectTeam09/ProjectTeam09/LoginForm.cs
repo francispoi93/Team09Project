@@ -12,7 +12,6 @@ namespace ProjectTeam09
 {
     public partial class LoginForm : Form
     {
-        
         public LoginForm()
         {
             InitializeComponent();
@@ -35,8 +34,11 @@ namespace ProjectTeam09
             if (passcheck && usercheck) 
             {
                 LoginInitialization(userID);
+            }else{
+                MessageBox.show(your password and Id do not match);
             }
             */
+            LoginInitialization(1000);
         }
         public void LoginInitialization(int userId)
         {
@@ -45,15 +47,15 @@ namespace ProjectTeam09
             ProfessorMainForm professorForm = new ProfessorMainForm();
             if (999 < userId && userId < 1999)
             {
-                studentForm.Show();
+                adminForm.Show();
             }
             if (1999 < userId && userId < 2999) 
             {
-                professorForm.Show();
+                studentForm.Show();
             }
             if (2999 < userId && userId < 3999) 
             {
-                adminForm.Show();
+                professorForm.Show();
             }
         }
     }
