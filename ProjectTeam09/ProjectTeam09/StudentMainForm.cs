@@ -15,6 +15,9 @@ namespace ProjectTeam09
         public StudentMainForm()
         {
             InitializeComponent();
+            //when we do the coding, the grades button gets which class from the bottom dataGridView and student from top, both must be selected. 
+            //edit personal info button gets the student from dataGridView and on form load fills all the info textboxes 
+            //TODO personal info form
         }
     }
 }

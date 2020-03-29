@@ -35,10 +35,14 @@
             this.buttonShowGrades = new System.Windows.Forms.Button();
             this.buttonShowContent = new System.Windows.Forms.Button();
             this.buttonEditPersonalInfo = new System.Windows.Forms.Button();
-            this.dataGridViewStudentView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewAvailable = new System.Windows.Forms.DataGridView();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRegisteredCourses)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAvailableCourses)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudentView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAvailable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewRegisteredCourses
@@ -108,22 +112,31 @@
             this.buttonEditPersonalInfo.Text = "Edit Personal Information";
             this.buttonEditPersonalInfo.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewStudentView
+            // dataGridViewAvailable
             // 
-            this.dataGridViewStudentView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStudentView.Location = new System.Drawing.Point(84, 52);
-            this.dataGridViewStudentView.Name = "dataGridViewStudentView";
-            this.dataGridViewStudentView.RowHeadersWidth = 102;
-            this.dataGridViewStudentView.RowTemplate.Height = 40;
-            this.dataGridViewStudentView.Size = new System.Drawing.Size(824, 173);
-            this.dataGridViewStudentView.TabIndex = 7;
+            this.dataGridViewAvailable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAvailable.Location = new System.Drawing.Point(84, 52);
+            this.dataGridViewAvailable.Name = "dataGridViewAvailable";
+            this.dataGridViewAvailable.RowHeadersWidth = 102;
+            this.dataGridViewAvailable.RowTemplate.Height = 40;
+            this.dataGridViewAvailable.Size = new System.Drawing.Size(824, 173);
+            this.dataGridViewAvailable.TabIndex = 7;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
             // 
             // StudentMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1082, 1092);
-            this.Controls.Add(this.dataGridViewStudentView);
+            this.Controls.Add(this.dataGridViewAvailable);
             this.Controls.Add(this.buttonEditPersonalInfo);
             this.Controls.Add(this.buttonShowContent);
             this.Controls.Add(this.buttonShowGrades);
@@ -135,7 +148,8 @@
             this.Text = "StudentMainForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRegisteredCourses)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAvailableCourses)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudentView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAvailable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -149,6 +163,9 @@
         private System.Windows.Forms.Button buttonShowGrades;
         private System.Windows.Forms.Button buttonShowContent;
         private System.Windows.Forms.Button buttonEditPersonalInfo;
-        private System.Windows.Forms.DataGridView dataGridViewStudentView;
+        private System.Windows.Forms.DataGridView dataGridViewAvailable;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
     }
 }
