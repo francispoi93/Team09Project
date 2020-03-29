@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace ProjectTeam09
 {
-    public partial class AdminMainForm : Form
+    public partial class AdminAddCourse : Form
     {
-        public AdminMainForm()
+        public AdminAddCourse()
         {
             InitializeComponent();
-            //make it so that if student is selected and search is blank takes to student main, same with prof
         }
     }
 }
