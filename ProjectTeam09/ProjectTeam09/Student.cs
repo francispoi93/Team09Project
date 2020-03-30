@@ -4,6 +4,7 @@ namespace ProjectTeam09
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity;
     using System.Data.Entity.Spatial;
 
     [Table("Student")]
@@ -30,5 +31,14 @@ namespace ProjectTeam09
         public int? Class4 { get; set; }
 
         public int? Class5 { get; set; }
+
+        public string PhoneNumber { get; set; }
+
+        public string Email { get; set; }
+
+        public static implicit operator DbSet<object>(Student v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

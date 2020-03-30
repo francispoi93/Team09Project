@@ -28,29 +28,30 @@ namespace ProjectTeam09
             int userID = new int();
             try {
                 userID = Int32.Parse(inputID);
+                LoginInitialization(userID);
             } catch {
                 MessageBox.Show("your input for ID is in an improper format");
-            
-            //bool usercheck = context.UserCredentials.UserID.contains(userID);
-            /*var databasePassword =
-                from n in context.UserCredentials
-                where n.UserID = userID
-                select n.Password;
-            bool passcheck = databasePassword == inputPass;
-            if (passcheck && usercheck) 
-            {
-                LoginInitialization(userID);
-            }else{
-                MessageBox.show(your password and Id do not match);
-            }
-            */
-            LoginInitialization(1000);
-        }
 
+                //bool usercheck = context.UserCredentials.UserID.contains(userID);
+                /*var databasePassword =
+                    from n in context.UserCredentials
+                    where n.UserID = userID
+                    select n.Password;
+                bool passcheck = databasePassword == inputPass;
+                if (passcheck && usercheck) 
+                {
+                    LoginInitialization(userID);
+                }else{
+                    MessageBox.show(your password and Id do not match);
+                }
+                */
+                LoginInitialization(1000);
+            }
+        }
         public void LoginInitialization(int userId)
         {
             AdminMainForm adminForm = new AdminMainForm();
-            StudentMainForm studentForm = new StudentMainForm();
+            StudentMainForm studentForm = new StudentMainForm(userId);
             ProfessorMainForm professorForm = new ProfessorMainForm();
             if (999 < userId && userId < 1999)
             {
