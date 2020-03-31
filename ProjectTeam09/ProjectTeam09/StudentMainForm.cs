@@ -34,7 +34,10 @@ namespace ProjectTeam09
 
         private void InitializeForm(int userId)
         {
-            //TODO Load student courses
+            context.Students.Load();
+            context.Courses.Load();
+            var student = context.Students.Find(userId);
+            dataGridViewAvailable.Rows.Add(student.Class1);
         }
 
 
