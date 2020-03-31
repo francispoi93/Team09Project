@@ -34,7 +34,29 @@ namespace ProjectTeam09
 
         private void InitializeForm(int userId)
         {
-            //TODO Load student courses
+            context.Students.Load();
+            context.Courses.Load();
+            var student = context.Students.Find(userId);
+            dataGridViewAvailable.AllowUserToDeleteRows = true;
+            dataGridViewAvailable.AllowUserToDeleteRows = true;
+            dataGridViewAvailable.AllowUserToDeleteRows = true;
+            dataGridViewAvailable.AllowUserToDeleteRows = true;
+
+            DataGridViewTextBoxColumn[] columns = new DataGridViewTextBoxColumn[]
+            {
+                new DataGridViewTextBoxColumn() {Name = "Course"},
+                new DataGridViewTextBoxColumn() {Name = "Professor Name"},
+            };
+            dataGridViewAvailable.Columns.AddRange(columns);
+
+            var query = from courses in context.Courses
+                        where courses.CourseId == student.Class1
+                        select courses;
+            foreach (var s in query)
+            {
+                dataGridViewAvailable.Rows.Add(new string[] { s.CourseName, s.Professor.FirstName + " " + s.Professor.LastName }); 
+            }
+            
         }
 
 

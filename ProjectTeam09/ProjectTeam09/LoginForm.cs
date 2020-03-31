@@ -45,7 +45,6 @@ namespace ProjectTeam09
                     MessageBox.show(your password and Id do not match);
                 }
                 */
-                LoginInitialization(1000);
             }
         }
         public void LoginInitialization(int userId)
