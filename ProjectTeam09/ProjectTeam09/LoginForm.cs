@@ -15,7 +15,8 @@ namespace ProjectTeam09
 {
     public partial class LoginForm : Form
     {
-        private StudentDirectory context = new StudentDirectory();
+        public int UserId { get; set; }
+        public StudentDirectory context = new StudentDirectory();
         public LoginForm()
         {
             context.UserCredentials.Load();
@@ -55,9 +56,9 @@ namespace ProjectTeam09
         }
         public void LoginInitialization(int userId)
         {
-            AdminMainForm adminForm = new AdminMainForm();
+            AdminMainForm adminForm = new AdminMainForm(userId);
             StudentMainForm studentForm = new StudentMainForm(userId);
-            ProfessorMainForm professorForm = new ProfessorMainForm();
+            ProfessorMainForm professorForm = new ProfessorMainForm(userId);
             if (999 < userId && userId < 1999)
             {
                 adminForm.Show();

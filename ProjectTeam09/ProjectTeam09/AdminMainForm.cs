@@ -12,7 +12,7 @@ namespace ProjectTeam09
 {
     public partial class AdminMainForm : Form
     {
-        public AdminMainForm()
+        public AdminMainForm(int userId)
         {
             InitializeComponent();
             //make it so that if student is selected and search is blank takes to student main, same with prof

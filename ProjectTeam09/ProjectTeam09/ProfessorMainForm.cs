@@ -12,7 +12,7 @@ namespace ProjectTeam09
 {
     public partial class ProfessorMainForm : Form
     {
-        public ProfessorMainForm()
+        public ProfessorMainForm(int userId)
         {
             InitializeComponent();
         }
