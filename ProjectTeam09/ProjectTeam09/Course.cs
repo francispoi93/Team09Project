@@ -15,11 +15,15 @@ namespace ProjectTeam09
         [StringLength(25)]
         public string CourseName { get; set; }
 
+        public int Section { get; set; }
+        [Required]
+
         public int ProfessorId { get; set; }
 
         [StringLength(50)]
         public string DocumentsFolder { get; set; }
 
         public virtual Professor Professor { get; set; }
+        public int maxClassSize { get; set; }
     }
 }
