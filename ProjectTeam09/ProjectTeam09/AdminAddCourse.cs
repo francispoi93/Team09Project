@@ -12,9 +12,17 @@ namespace ProjectTeam09
 {
     public partial class AdminAddCourse : Form
     {
+        public StudentDirectory context = new StudentDirectory();
         public AdminAddCourse()
         {
             InitializeComponent();
+            Course newCourse = new Course {
+                CourseId = Int32.Parse(textBoxCourseID.Text),
+                CourseName = textBoxCourseName.Text,
+
+                Professor = context.Professors.Find(Int32.Parse(textBoxClassProfessor.Text)),
+            };
+            context.Courses.Add(newCourse);
         }
     }
 }
