@@ -8,15 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
 
 namespace ProjectTeam09
 {
     public partial class LoginForm : Form
     {
-        private StudentDirectory context;
+        private StudentDirectory context = new StudentDirectory();
         public LoginForm()
         {
-            context = new StudentDirectory();
+            context.UserCredentials.Load();
             InitializeComponent();
             buttonLoginSignIn.Click += (s, e) => login(textBoxLoginUsername.Text, textBoxLoginPassword.Text);
         }
@@ -26,26 +28,29 @@ namespace ProjectTeam09
             // Data has been added to UserCredentials for testing, permissions set as R = read, W = write, U=update, users 1000, 2000, 3000 added
             // passwords being admin, student, and professor respectively
             int userID = new int();
-            try {
+            try
+            {
                 userID = Int32.Parse(inputID);
-                LoginInitialization(userID);
-            } catch {
+            }
+            catch
+            {
                 MessageBox.Show("your input for ID is in an improper format");
-
-                //bool usercheck = context.UserCredentials.UserID.contains(userID);
-                /*var databasePassword =
-                    from n in context.UserCredentials
-                    where n.UserID = userID
-                    select n.Password;
-                bool passcheck = databasePassword == inputPass;
-                if (passcheck && usercheck) 
+                try
                 {
-                    LoginInitialization(userID);
-                }else{
-                    MessageBox.show(your password and Id do not match);
+                    var user = context.UserCredentials.Find(userID);
+                    if (user.Password == inputPass)
+                    {
+                        LoginInitialization(userID);
+                    }
+                    else
+                    {
+                        MessageBox.Show("your password does not match the ID");
+                    }
                 }
-                */
-                LoginInitialization(1000);
+                catch
+                {
+                    MessageBox.Show("your userId is not in the database");
+                }
             }
         }
         public void LoginInitialization(int userId)
