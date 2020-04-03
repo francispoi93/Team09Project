@@ -37,6 +37,8 @@
             this.textBoxClassSize = new System.Windows.Forms.TextBox();
             this.textBoxClassProfessor = new System.Windows.Forms.TextBox();
             this.buttonCourseAdd = new System.Windows.Forms.Button();
+            this.labelSection = new System.Windows.Forms.Label();
+            this.textBoxCourseSection = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBoxCourseID
@@ -48,7 +50,7 @@
             // 
             // textBoxCourseName
             // 
-            this.textBoxCourseName.Location = new System.Drawing.Point(302, 129);
+            this.textBoxCourseName.Location = new System.Drawing.Point(302, 212);
             this.textBoxCourseName.Name = "textBoxCourseName";
             this.textBoxCourseName.Size = new System.Drawing.Size(100, 38);
             this.textBoxCourseName.TabIndex = 1;
@@ -65,7 +67,7 @@
             // labelCourseName
             // 
             this.labelCourseName.AutoSize = true;
-            this.labelCourseName.Location = new System.Drawing.Point(29, 132);
+            this.labelCourseName.Location = new System.Drawing.Point(29, 212);
             this.labelCourseName.Name = "labelCourseName";
             this.labelCourseName.Size = new System.Drawing.Size(188, 32);
             this.labelCourseName.TabIndex = 3;
@@ -74,7 +76,7 @@
             // labelClassSize
             // 
             this.labelClassSize.AutoSize = true;
-            this.labelClassSize.Location = new System.Drawing.Point(29, 218);
+            this.labelClassSize.Location = new System.Drawing.Point(29, 316);
             this.labelClassSize.Name = "labelClassSize";
             this.labelClassSize.Size = new System.Drawing.Size(149, 32);
             this.labelClassSize.TabIndex = 4;
@@ -83,7 +85,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 304);
+            this.label1.Location = new System.Drawing.Point(29, 399);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(214, 32);
             this.label1.TabIndex = 5;
@@ -91,32 +93,50 @@
             // 
             // textBoxClassSize
             // 
-            this.textBoxClassSize.Location = new System.Drawing.Point(302, 218);
+            this.textBoxClassSize.Location = new System.Drawing.Point(302, 299);
             this.textBoxClassSize.Name = "textBoxClassSize";
             this.textBoxClassSize.Size = new System.Drawing.Size(100, 38);
             this.textBoxClassSize.TabIndex = 6;
             // 
             // textBoxClassProfessor
             // 
-            this.textBoxClassProfessor.Location = new System.Drawing.Point(302, 304);
+            this.textBoxClassProfessor.Location = new System.Drawing.Point(302, 396);
             this.textBoxClassProfessor.Name = "textBoxClassProfessor";
             this.textBoxClassProfessor.Size = new System.Drawing.Size(100, 38);
             this.textBoxClassProfessor.TabIndex = 7;
             // 
             // buttonCourseAdd
             // 
-            this.buttonCourseAdd.Location = new System.Drawing.Point(108, 406);
+            this.buttonCourseAdd.Location = new System.Drawing.Point(108, 487);
             this.buttonCourseAdd.Name = "buttonCourseAdd";
             this.buttonCourseAdd.Size = new System.Drawing.Size(186, 57);
             this.buttonCourseAdd.TabIndex = 8;
             this.buttonCourseAdd.Text = "Add Course";
             this.buttonCourseAdd.UseVisualStyleBackColor = true;
             // 
+            // labelSection
+            // 
+            this.labelSection.AutoSize = true;
+            this.labelSection.Location = new System.Drawing.Point(29, 131);
+            this.labelSection.Name = "labelSection";
+            this.labelSection.Size = new System.Drawing.Size(111, 32);
+            this.labelSection.TabIndex = 9;
+            this.labelSection.Text = "Section";
+            // 
+            // textBoxCourseSection
+            // 
+            this.textBoxCourseSection.Location = new System.Drawing.Point(302, 128);
+            this.textBoxCourseSection.Name = "textBoxCourseSection";
+            this.textBoxCourseSection.Size = new System.Drawing.Size(100, 38);
+            this.textBoxCourseSection.TabIndex = 10;
+            // 
             // AdminAddCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(451, 601);
+            this.Controls.Add(this.textBoxCourseSection);
+            this.Controls.Add(this.labelSection);
             this.Controls.Add(this.buttonCourseAdd);
             this.Controls.Add(this.textBoxClassProfessor);
             this.Controls.Add(this.textBoxClassSize);
@@ -144,5 +164,7 @@
         private System.Windows.Forms.TextBox textBoxClassSize;
         private System.Windows.Forms.TextBox textBoxClassProfessor;
         private System.Windows.Forms.Button buttonCourseAdd;
+        private System.Windows.Forms.Label labelSection;
+        private System.Windows.Forms.TextBox textBoxCourseSection;
     }
 }
