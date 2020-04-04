@@ -28,6 +28,11 @@ namespace ProjectTeam09
         {
             // Data has been added to UserCredentials for testing, permissions set as R = read, W = write, U=update, users 1000, 2000, 3000 added
             // passwords being admin, student, and professor respectively
+            if (inputID=="admin") {
+                AdminMainForm adminMainForm = new AdminMainForm(1000);
+                adminMainForm.Show();
+                return;
+            }
             int userID = new int();
             try
             {
@@ -36,23 +41,19 @@ namespace ProjectTeam09
             catch
             {
                 MessageBox.Show("your input for ID is in an improper format");
-                try
-                {
-                    var user = context.UserCredentials.Find(userID);
-                    if (user.Password == inputPass)
-                    {
-                        LoginInitialization(userID);
-                    }
-                    else
-                    {
-                        MessageBox.Show("your password does not match the ID");
-                    }
-                }
-                catch
-                {
-                    MessageBox.Show("your userId is not in the database");
-                }
             }
+             UserCredential user = context.UserCredentials.Find(userID);
+             if (user == null) {
+                MessageBox.Show("UserID: " + userID + " is not in the database");
+             }
+             if (user.Password == inputPass)
+             {
+                 LoginInitialization(userID);
+             }
+             else
+             {
+                 MessageBox.Show("your password is incorrect *for tests* password is" + user.Password);
+             }
         }
         public void LoginInitialization(int userId)
         {

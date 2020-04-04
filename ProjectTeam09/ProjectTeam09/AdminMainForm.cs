@@ -17,15 +17,48 @@ namespace ProjectTeam09
         {
             InitializeComponent();
             //make it so that if student is selected and search is blank takes to student main, same with prof
+            buttonAddCourse.Click += (s,e) => AddCourse();
+            buttonSearch.Click += (s,e) => IdView(userId);
+            buttonBackupXML.Click += (s, e) => BackupDataSetToXML();
+            buttonAddUser.Click += (s,e) => AddUser();
         }
         public void BackupDataSetToXML()
         {
-            if (context == null)
+            
+        }
+        public void AddUser() 
+        {
+            AdminAddUser addUser = new AdminAddUser();
+            addUser.Show();
+        }
+        public void AddCourse() 
+        {
+            AdminAddCourse addCourse = new AdminAddCourse();
+            addCourse.Show();
+        }
+        public void IdView(int userId)
+        {
+            int viewId = new int();
+            try
             {
-                return;
+                viewId = Int32.Parse(textBoxUserID.Text);
+                if (1999 < viewId && viewId< 2999) {
+                    StudentMainForm studentMainForm = new StudentMainForm(viewId);
+                    studentMainForm.Show();
+                }
+                else if (2999 < viewId && viewId < 3999)
+                {
+                   ProfessorMainForm professorMainForm = new ProfessorMainForm(viewId);
+                    professorMainForm.Show();
+                }
+                else {
+                    MessageBox.Show("Id view unavailable");
+                }
             }
-
-        //    context. //(dataSet.DataSetName + ".xml", XmlWriteMode.WriteSchema);
+            catch
+            {
+                MessageBox.Show("Please enter a number");
+            }
         }
     }
 }
