@@ -1,6 +1,6 @@
 ﻿namespace ProjectTeam09
 {
-    partial class AdminAddUser
+    partial class AdminModifyForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,43 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(58, 98);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 38);
-            this.textBox1.TabIndex = 1;
-            // 
-            // AdminAddUser
+            // AdminModifyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(809, 730);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
-            this.Name = "AdminAddUser";
-            this.Text = "AdminAddUser";
+            this.ClientSize = new System.Drawing.Size(774, 700);
+            this.Name = "AdminModifyForm";
+            this.Text = "AdminModifyForm";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }

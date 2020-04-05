@@ -33,7 +33,7 @@
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonAddCourse = new System.Windows.Forms.Button();
             this.labelUserID = new System.Windows.Forms.Label();
-            this.buttonAddUser = new System.Windows.Forms.Button();
+            this.buttonAddModifyUser = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonBackupXML
@@ -79,21 +79,21 @@
             this.labelUserID.TabIndex = 6;
             this.labelUserID.Text = "User ID";
             // 
-            // buttonAddUser
+            // buttonAddModifyUser
             // 
-            this.buttonAddUser.Location = new System.Drawing.Point(279, 240);
-            this.buttonAddUser.Name = "buttonAddUser";
-            this.buttonAddUser.Size = new System.Drawing.Size(147, 96);
-            this.buttonAddUser.TabIndex = 7;
-            this.buttonAddUser.Text = "Add User";
-            this.buttonAddUser.UseVisualStyleBackColor = true;
+            this.buttonAddModifyUser.Location = new System.Drawing.Point(254, 240);
+            this.buttonAddModifyUser.Name = "buttonAddModifyUser";
+            this.buttonAddModifyUser.Size = new System.Drawing.Size(206, 96);
+            this.buttonAddModifyUser.TabIndex = 7;
+            this.buttonAddModifyUser.Text = "Add/Modify User";
+            this.buttonAddModifyUser.UseVisualStyleBackColor = true;
             // 
             // AdminMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(506, 536);
-            this.Controls.Add(this.buttonAddUser);
+            this.Controls.Add(this.buttonAddModifyUser);
             this.Controls.Add(this.labelUserID);
             this.Controls.Add(this.buttonAddCourse);
             this.Controls.Add(this.buttonSearch);
@@ -113,6 +113,6 @@
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Button buttonAddCourse;
         private System.Windows.Forms.Label labelUserID;
-        private System.Windows.Forms.Button buttonAddUser;
+        private System.Windows.Forms.Button buttonAddModifyUser;
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjectTeam09
 {
-    public partial class AdminAddUser : Form
+    public partial class AdminAddForm : Form
     {
-        public AdminAddUser()
+        public AdminAddForm()
         {
             InitializeComponent();
         }

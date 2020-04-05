@@ -16,17 +16,16 @@ namespace ProjectTeam09
         public AdminMainForm(int userId)
         {
             InitializeComponent();
-            //make it so that if student is selected and search is blank takes to student main, same with prof
             buttonAddCourse.Click += (s,e) => AddCourse();
             buttonSearch.Click += (s,e) => IdView(userId);
             buttonBackupXML.Click += (s, e) => BackupDataSetToXML();
-            buttonAddUser.Click += (s,e) => AddUser();
+            buttonAddModifyUser.Click += (s,e) => AddModifyUser();
         }
         public void BackupDataSetToXML()
         {
             
         }
-        public void AddUser() 
+        public void AddModifyUser() 
         {
             AdminAddUser addUser = new AdminAddUser();
             addUser.Show();

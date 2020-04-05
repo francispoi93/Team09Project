@@ -15,6 +15,7 @@ namespace ProjectTeam09
         public virtual DbSet<Course> Courses { get; set; }
         public virtual DbSet<Professor> Professors { get; set; }
         public virtual DbSet<Student> Students { get; set; }
+        public virtual DbSet<Admin> Admin { get; set; }
         public virtual DbSet<UserCredential> UserCredentials { get; set; }
         public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
         public virtual DbSet<Grade> Grades { get; set; }
