@@ -28,6 +28,11 @@ namespace ProjectTeam09
         {
             // Data has been added to UserCredentials for testing, permissions set as R = read, W = write, U=update, users 1000, 2000, 3000 added
             // passwords being admin, student, and professor respectively
+            if (inputID=="admin") {
+                AdminMainForm adminMainForm = new AdminMainForm(1000);
+                adminMainForm.Show();
+                return;
+            }
             int userID = new int();
             try
             {
@@ -36,6 +41,7 @@ namespace ProjectTeam09
             catch
             {
                 MessageBox.Show("your input for ID is in an improper format");
+<<<<<<< HEAD
                 try
                 {
                     var user = context.UserCredentials.Find(userID);
@@ -56,23 +62,42 @@ namespace ProjectTeam09
                 */
 =======
 >>>>>>> master
+=======
+                return;
+>>>>>>> master
             }
+             UserCredential user = context.UserCredentials.Find(userID);
+             if (user == null) {
+                MessageBox.Show("UserID: " + userID + " is not in the database");
+                return;
+             }
+             if (user.Password == inputPass)
+             {
+                 LoginInitialization(userID);
+             }
+             else
+             {
+                 MessageBox.Show("your password is incorrect real password is" + user.Password);
+             }
         }
         public void LoginInitialization(int userId)
         {
-            AdminMainForm adminForm = new AdminMainForm(userId);
-            StudentMainForm studentForm = new StudentMainForm(userId);
-            ProfessorMainForm professorForm = new ProfessorMainForm(userId);
             if (999 < userId && userId < 1999)
             {
+                MessageBox.Show("logging into admin");
+                AdminMainForm adminForm = new AdminMainForm(userId);
                 adminForm.Show();
             }
             if (1999 < userId && userId < 2999) 
             {
+                MessageBox.Show("logging into student");
+                StudentMainForm studentForm = new StudentMainForm(userId);
                 studentForm.Show();
             }
             if (2999 < userId && userId < 3999) 
             {
+                MessageBox.Show("logging into prof");
+                ProfessorMainForm professorForm = new ProfessorMainForm(userId);
                 professorForm.Show();
             }
         }

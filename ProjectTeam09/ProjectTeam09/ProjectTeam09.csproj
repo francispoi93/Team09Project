@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>ProjectTeam09</RootNamespace>
     <AssemblyName>ProjectTeam09</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -59,17 +59,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs" />
     <Compile Include="AdminAddCourse.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminAddCourse.Designer.cs">
       <DependentUpon>AdminAddCourse.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminAddForm.Designer.cs">
+      <DependentUpon>AdminAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAddModifyUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminAddModifyUser.Designer.cs">
+      <DependentUpon>AdminAddModifyUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminMainForm.Designer.cs">
       <DependentUpon>AdminMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminModifyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminModifyForm.Designer.cs">
+      <DependentUpon>AdminModifyForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Course.cs" />
     <Compile Include="CourseContentForm.cs">
@@ -125,8 +144,17 @@
     <EmbeddedResource Include="AdminAddCourse.resx">
       <DependentUpon>AdminAddCourse.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminAddForm.resx">
+      <DependentUpon>AdminAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminAddModifyUser.resx">
+      <DependentUpon>AdminAddModifyUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminMainForm.resx">
       <DependentUpon>AdminMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminModifyForm.resx">
+      <DependentUpon>AdminModifyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

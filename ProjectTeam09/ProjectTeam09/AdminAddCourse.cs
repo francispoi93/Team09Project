@@ -19,7 +19,7 @@ namespace ProjectTeam09
             buttonCourseAdd.Click += (s, e) => addCourse();
         }
         public void addCourse() {
-            if (textBoxClassProfessor.Text != null && textBoxCourseSection.Text!=null && textBoxClassSize.Text != null && textBoxCourseID.Text != null && textBoxCourseName.Text != null)
+            if (textBoxClassProfessor.Text != "" && textBoxCourseSection.Text!= "" && textBoxClassSize.Text != "" && textBoxCourseID.Text != "" && textBoxCourseName.Text != "")
             {
                 Course newCourse = new Course
                 {

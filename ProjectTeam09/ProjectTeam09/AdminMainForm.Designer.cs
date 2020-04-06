@@ -29,79 +29,75 @@
         private void InitializeComponent()
         {
             this.buttonBackupXML = new System.Windows.Forms.Button();
-            this.radioButtonTeacher = new System.Windows.Forms.RadioButton();
-            this.radioButtonStudent = new System.Windows.Forms.RadioButton();
-            this.textBoxCourseNumber = new System.Windows.Forms.TextBox();
+            this.textBoxUserID = new System.Windows.Forms.TextBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonAddCourse = new System.Windows.Forms.Button();
+            this.labelUserID = new System.Windows.Forms.Label();
+            this.buttonAddModifyUser = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonBackupXML
             // 
-            this.buttonBackupXML.Location = new System.Drawing.Point(145, 404);
+            this.buttonBackupXML.Location = new System.Drawing.Point(149, 377);
             this.buttonBackupXML.Name = "buttonBackupXML";
             this.buttonBackupXML.Size = new System.Drawing.Size(199, 105);
             this.buttonBackupXML.TabIndex = 0;
             this.buttonBackupXML.Text = "back up to XML";
             this.buttonBackupXML.UseVisualStyleBackColor = true;
             // 
-            // radioButtonTeacher
+            // textBoxUserID
             // 
-            this.radioButtonTeacher.AutoSize = true;
-            this.radioButtonTeacher.Location = new System.Drawing.Point(33, 102);
-            this.radioButtonTeacher.Name = "radioButtonTeacher";
-            this.radioButtonTeacher.Size = new System.Drawing.Size(156, 36);
-            this.radioButtonTeacher.TabIndex = 1;
-            this.radioButtonTeacher.TabStop = true;
-            this.radioButtonTeacher.Text = "Teacher";
-            this.radioButtonTeacher.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonStudent
-            // 
-            this.radioButtonStudent.AutoSize = true;
-            this.radioButtonStudent.Location = new System.Drawing.Point(33, 39);
-            this.radioButtonStudent.Name = "radioButtonStudent";
-            this.radioButtonStudent.Size = new System.Drawing.Size(151, 36);
-            this.radioButtonStudent.TabIndex = 2;
-            this.radioButtonStudent.TabStop = true;
-            this.radioButtonStudent.Text = "Student";
-            this.radioButtonStudent.UseVisualStyleBackColor = true;
-            // 
-            // textBoxCourseNumber
-            // 
-            this.textBoxCourseNumber.Location = new System.Drawing.Point(232, 74);
-            this.textBoxCourseNumber.Name = "textBoxCourseNumber";
-            this.textBoxCourseNumber.Size = new System.Drawing.Size(100, 38);
-            this.textBoxCourseNumber.TabIndex = 3;
+            this.textBoxUserID.Location = new System.Drawing.Point(34, 138);
+            this.textBoxUserID.Name = "textBoxUserID";
+            this.textBoxUserID.Size = new System.Drawing.Size(198, 38);
+            this.textBoxUserID.TabIndex = 3;
             // 
             // buttonSearch
             // 
-            this.buttonSearch.Location = new System.Drawing.Point(359, 74);
+            this.buttonSearch.Location = new System.Drawing.Point(300, 109);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(126, 48);
+            this.buttonSearch.Size = new System.Drawing.Size(160, 48);
             this.buttonSearch.TabIndex = 4;
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = true;
             // 
             // buttonAddCourse
             // 
-            this.buttonAddCourse.Location = new System.Drawing.Point(172, 276);
+            this.buttonAddCourse.Location = new System.Drawing.Point(53, 240);
             this.buttonAddCourse.Name = "buttonAddCourse";
             this.buttonAddCourse.Size = new System.Drawing.Size(147, 96);
             this.buttonAddCourse.TabIndex = 5;
             this.buttonAddCourse.Text = "Add course";
             this.buttonAddCourse.UseVisualStyleBackColor = true;
             // 
+            // labelUserID
+            // 
+            this.labelUserID.AutoSize = true;
+            this.labelUserID.Location = new System.Drawing.Point(28, 89);
+            this.labelUserID.Name = "labelUserID";
+            this.labelUserID.Size = new System.Drawing.Size(108, 32);
+            this.labelUserID.TabIndex = 6;
+            this.labelUserID.Text = "User ID";
+            // 
+            // buttonAddModifyUser
+            // 
+            this.buttonAddModifyUser.Location = new System.Drawing.Point(254, 240);
+            this.buttonAddModifyUser.Name = "buttonAddModifyUser";
+            this.buttonAddModifyUser.Size = new System.Drawing.Size(206, 96);
+            this.buttonAddModifyUser.TabIndex = 7;
+            this.buttonAddModifyUser.Text = "Add/Modify User";
+            this.buttonAddModifyUser.UseVisualStyleBackColor = true;
+            // 
             // AdminMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(506, 584);
+            this.ClientSize = new System.Drawing.Size(506, 536);
+            this.Controls.Add(this.buttonAddModifyUser);
+            this.Controls.Add(this.labelUserID);
             this.Controls.Add(this.buttonAddCourse);
             this.Controls.Add(this.buttonSearch);
-            this.Controls.Add(this.textBoxCourseNumber);
-            this.Controls.Add(this.radioButtonStudent);
-            this.Controls.Add(this.radioButtonTeacher);
+            this.Controls.Add(this.textBoxUserID);
             this.Controls.Add(this.buttonBackupXML);
             this.Name = "AdminMainForm";
             this.Text = "AdminMainForm";
@@ -113,10 +109,10 @@
         #endregion
 
         private System.Windows.Forms.Button buttonBackupXML;
-        private System.Windows.Forms.RadioButton radioButtonTeacher;
-        private System.Windows.Forms.RadioButton radioButtonStudent;
-        private System.Windows.Forms.TextBox textBoxCourseNumber;
+        private System.Windows.Forms.TextBox textBoxUserID;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Button buttonAddCourse;
+        private System.Windows.Forms.Label labelUserID;
+        private System.Windows.Forms.Button buttonAddModifyUser;
     }
 }
