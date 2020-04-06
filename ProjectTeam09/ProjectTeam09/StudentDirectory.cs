@@ -36,8 +36,8 @@ namespace ProjectTeam09
                 .IsUnicode(false);
 
             modelBuilder.Entity<Grade>()
-                .Property(e => e.Grade1)
-                .IsFixedLength();
+                .Property(e => e.Grade1);
+
         }
     }
 }

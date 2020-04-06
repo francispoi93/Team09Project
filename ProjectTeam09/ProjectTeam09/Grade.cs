@@ -12,13 +12,12 @@ namespace ProjectTeam09
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int StudentId { get; set; }
 
-        public int? CourseId { get; set; }
+        public int CourseId { get; set; }
+        public double Grade1 { get; set; }
 
-        [StringLength(10)]
+        [StringLength(20)]
         public string Assignment { get; set; }
 
-        [Column("Grade")]
-        [StringLength(10)]
-        public string Grade1 { get; set; }
+        
     }
 }

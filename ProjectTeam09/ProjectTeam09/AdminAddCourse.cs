@@ -26,7 +26,7 @@ namespace ProjectTeam09
                     CourseId = Int32.Parse(textBoxCourseID.Text),
                     Section = Int32.Parse(textBoxCourseSection.Text),
                     CourseName = textBoxCourseName.Text,
-                    maxClassSize = Int32.Parse(textBoxClassSize.Text),
+                    MaxCourseSize = Int32.Parse(textBoxClassSize.Text),
                     Professor = context.Professors.Find(Int32.Parse(textBoxClassProfessor.Text)),
                 };
                 context.Courses.Add(newCourse);

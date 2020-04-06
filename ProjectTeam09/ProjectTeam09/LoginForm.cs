@@ -41,11 +41,11 @@ namespace ProjectTeam09
             catch
             {
                 MessageBox.Show("your input for ID is in an improper format");
-<<<<<<< HEAD
+
                 try
                 {
-                    var user = context.UserCredentials.Find(userID);
-                    if (user.Password == inputPass)
+                    var userid = context.UserCredentials.Find(userID);
+                    if (userid.Password == inputPass)
                     {
                         LoginInitialization(userID);
                     }
@@ -58,13 +58,10 @@ namespace ProjectTeam09
                 {
                     MessageBox.Show("your userId is not in the database");
                 }
-<<<<<<< HEAD
-                */
-=======
->>>>>>> master
-=======
+
+
                 return;
->>>>>>> master
+
             }
              UserCredential user = context.UserCredentials.Find(userID);
              if (user == null) {

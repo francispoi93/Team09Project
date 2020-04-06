@@ -28,60 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelGradeStudent = new System.Windows.Forms.Label();
-            this.labelClassGrades = new System.Windows.Forms.Label();
             this.dataGridViewStudentGrades = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudentGrades)).BeginInit();
             this.SuspendLayout();
             // 
-            // labelGradeStudent
-            // 
-            this.labelGradeStudent.AutoSize = true;
-            this.labelGradeStudent.Location = new System.Drawing.Point(290, 64);
-            this.labelGradeStudent.Name = "labelGradeStudent";
-            this.labelGradeStudent.Size = new System.Drawing.Size(114, 32);
-            this.labelGradeStudent.TabIndex = 0;
-            this.labelGradeStudent.Text = "Student";
-            // 
-            // labelClassGrades
-            // 
-            this.labelClassGrades.AutoSize = true;
-            this.labelClassGrades.Location = new System.Drawing.Point(68, 156);
-            this.labelClassGrades.Name = "labelClassGrades";
-            this.labelClassGrades.Size = new System.Drawing.Size(164, 32);
-            this.labelClassGrades.TabIndex = 1;
-            this.labelClassGrades.Text = "Class name";
-            // 
             // dataGridViewStudentGrades
             // 
             this.dataGridViewStudentGrades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStudentGrades.Location = new System.Drawing.Point(74, 247);
+            this.dataGridViewStudentGrades.Location = new System.Drawing.Point(10, 10);
+            this.dataGridViewStudentGrades.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.dataGridViewStudentGrades.Name = "dataGridViewStudentGrades";
             this.dataGridViewStudentGrades.RowHeadersWidth = 102;
             this.dataGridViewStudentGrades.RowTemplate.Height = 40;
-            this.dataGridViewStudentGrades.Size = new System.Drawing.Size(559, 414);
+            this.dataGridViewStudentGrades.Size = new System.Drawing.Size(728, 349);
             this.dataGridViewStudentGrades.TabIndex = 2;
             // 
             // StudentGradesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 700);
+            this.ClientSize = new System.Drawing.Size(795, 382);
             this.Controls.Add(this.dataGridViewStudentGrades);
-            this.Controls.Add(this.labelClassGrades);
-            this.Controls.Add(this.labelGradeStudent);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "StudentGradesForm";
             this.Text = "StudentGradesForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudentGrades)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label labelGradeStudent;
-        private System.Windows.Forms.Label labelClassGrades;
         private System.Windows.Forms.DataGridView dataGridViewStudentGrades;
     }
 }
