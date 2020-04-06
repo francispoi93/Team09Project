@@ -41,10 +41,12 @@ namespace ProjectTeam09
             catch
             {
                 MessageBox.Show("your input for ID is in an improper format");
+                return;
             }
              UserCredential user = context.UserCredentials.Find(userID);
              if (user == null) {
                 MessageBox.Show("UserID: " + userID + " is not in the database");
+                return;
              }
              if (user.Password == inputPass)
              {
@@ -52,24 +54,27 @@ namespace ProjectTeam09
              }
              else
              {
-                 MessageBox.Show("your password is incorrect *for tests* password is" + user.Password);
+                 MessageBox.Show("your password is incorrect real password is" + user.Password);
              }
         }
         public void LoginInitialization(int userId)
         {
-            AdminMainForm adminForm = new AdminMainForm(userId);
-            StudentMainForm studentForm = new StudentMainForm(userId);
-            ProfessorMainForm professorForm = new ProfessorMainForm(userId);
             if (999 < userId && userId < 1999)
             {
+                MessageBox.Show("logging into admin");
+                AdminMainForm adminForm = new AdminMainForm(userId);
                 adminForm.Show();
             }
             if (1999 < userId && userId < 2999) 
             {
+                MessageBox.Show("logging into student");
+                StudentMainForm studentForm = new StudentMainForm(userId);
                 studentForm.Show();
             }
             if (2999 < userId && userId < 3999) 
             {
+                MessageBox.Show("logging into prof");
+                ProfessorMainForm professorForm = new ProfessorMainForm(userId);
                 professorForm.Show();
             }
         }
