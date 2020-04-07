@@ -106,7 +106,7 @@ namespace ProjectTeam09
             dataGridViewAvailable.Columns.AddRange(columns);
 
             var query = from courses in context.Courses
-                        where courses.CourseId == student.Class1
+                        where courses.CourseId == student.Class1 || courses.CourseId == student.Class2
                         select courses;
             foreach (var s in query)
             {
