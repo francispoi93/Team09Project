@@ -29,6 +29,7 @@ namespace ProjectTeam09
                     MaxCourseSize = Int32.Parse(textBoxClassSize.Text),
                     Professor = context.Professors.Find(Int32.Parse(textBoxClassProfessor.Text)),
                 };
+                //during testing double check for duplicate entries
                 context.Courses.Add(newCourse);
                 context.SaveChanges();
                 this.Close();

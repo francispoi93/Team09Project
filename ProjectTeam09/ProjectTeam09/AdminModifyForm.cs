@@ -12,7 +12,7 @@ namespace ProjectTeam09
 {
     public partial class AdminModifyForm : Form
     {
-        public AdminModifyForm()
+        public AdminModifyForm(String modifyUser)
         {
             InitializeComponent();
         }
