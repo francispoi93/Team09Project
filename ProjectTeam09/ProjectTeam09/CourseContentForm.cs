@@ -12,9 +12,18 @@ namespace ProjectTeam09
 {
     public partial class CourseContentForm : Form
     {
-        public CourseContentForm()
+        public CourseContentForm(string path)
         {
             InitializeComponent();
+            buttonBack.Click += ButtonBack_Click;
+            
+            webBrowserContent.Url = new Uri(System.IO.Path.GetFullPath(Application.StartupPath + path));
+        }
+
+        private void ButtonBack_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            this.Hide();
         }
     }
 }
