@@ -26,18 +26,62 @@ namespace ProjectTeam09
             //TODO personal info form
             buttonEditPersonalInfo.Click += ButtonEditPersonalInfo_Click;
             buttonShowGrades.Click += ButtonShowGrades_Click;
+            buttonShowContent.Click += ButtonShowContent_Click;
+        }
+
+        private void ButtonShowContent_Click(object sender, EventArgs e)
+        {
+            CourseID = 0;
+            try
+            {
+                SelectedRows();
+                var contextCourse = context.Courses.Find(CourseID);
+                string contentPath = contextCourse.DocumentsFolder;
+                CourseContentForm contentForm = new CourseContentForm(contentPath);
+                contentForm.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Please select a valid class.");
+            }
         }
 
         private void ButtonShowGrades_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dataGridViewAvailable.SelectedRows)
-            {
-                CourseID = Int32.Parse(row.Cells[0].Value.ToString());
+            CourseID = 0;
+            try {
+                SelectedRows();
+                if (CourseID != 0)
+                {
+                    StudentGradesForm gradeForm = new StudentGradesForm(StudentID, CourseID);
+                    gradeForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Please select a valid class.");
+                }
             }
-                StudentGradesForm gradeForm = new StudentGradesForm(StudentID, CourseID);
-            gradeForm.Show();
+            catch
+            {
+                MessageBox.Show("Please select a valid class.");
+            }
+
+
         }
 
+        public void SelectedRows()
+        {
+            try
+            {
+                foreach (DataGridViewRow row in dataGridViewAvailable.SelectedRows)
+                {
+                    CourseID = Int32.Parse(row.Cells[0].Value.ToString());
+                }
+            }
+            catch
+            {
+            }
+        }
         private void ButtonEditPersonalInfo_Click(object sender, EventArgs e)
         {
             StudentInfoForm studentForm = new StudentInfoForm(StudentID);

@@ -26,6 +26,7 @@ namespace ProjectTeam09
 
         private void InitializeDataGrid()
         {
+          
             context.Grades.Load();
             dataGridViewStudentGrades.AllowUserToDeleteRows = false;
 
