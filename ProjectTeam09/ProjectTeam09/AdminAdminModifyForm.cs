@@ -10,9 +10,10 @@ using System.Windows.Forms;
 
 namespace ProjectTeam09
 {
-    public partial class AdminModifyForm : Form
+    public partial class AdminAdminModifyForm : Form
     {
-        public AdminModifyForm(String modifyUser)
+        StudentDirectory context = new StudentDirectory();
+        public AdminAdminModifyForm(Admin modifyUser)
         {
             InitializeComponent();
         }

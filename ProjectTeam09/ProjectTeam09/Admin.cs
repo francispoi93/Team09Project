@@ -13,7 +13,7 @@
 
         [Required]
         [StringLength(25)]
-        public string Firstname { get; set; }
+        public string FirstName { get; set; }
         [Required]
         public string LastName { get; set; }   
     }

@@ -1,6 +1,6 @@
 ﻿namespace ProjectTeam09
 {
-    partial class AdminModifyForm
+    partial class AdminStudentReport
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // AdminModifyForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(774, 700);
-            this.Name = "AdminModifyForm";
-            this.Text = "AdminModifyForm";
-            this.ResumeLayout(false);
-
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "AdminStudentReport";
         }
 
         #endregion

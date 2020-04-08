@@ -20,10 +20,28 @@ namespace ProjectTeam09
             buttonSearch.Click += (s,e) => IdView(userId);
             buttonBackupXML.Click += (s, e) => BackupDataSetToXML();
             buttonAddModifyUser.Click += (s,e) => AddModifyUser();
+            buttonReportForm.Click += (s,e) => ReportFormCaller();
         }
+
         public void BackupDataSetToXML()
         {
             
+        }
+        private void ReportFormCaller() {
+            if (radioButtonProfReports.Checked == true)
+            {
+                AdminProfessorReport adminProfessorReport = new AdminProfessorReport();
+                adminProfessorReport.Show();
+            }
+            else if (radioButtonStudentReports.Checked == true)
+            {
+                AdminStudentReport adminStudentReport = new AdminStudentReport();
+                adminStudentReport.Show();
+            }
+            else 
+            {
+                MessageBox.Show("please pick a report to view");
+            }
         }
         public void AddModifyUser() 
         {

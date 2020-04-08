@@ -15,9 +15,9 @@ namespace ProjectTeam09
         [StringLength(25)]
         public string CourseName { get; set; }
 
+        public int CourseNumber { get; set; }
     
         [Required]
-
         public int ProfessorId { get; set; }
         public int Section { get; set; }
         public int MaxCourseSize { get; set; }

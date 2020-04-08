@@ -13,17 +13,16 @@ namespace ProjectTeam09
 {
     public partial class AdminAddUser : Form
     {
-        StudentDirectory context = new StudentDirectory();
+            StudentDirectory context = new StudentDirectory();
         public AdminAddUser()
         {   
             InitializeComponent();
             dataGridViewProfessors.MultiSelect = false;
             dataGridViewStudents.MultiSelect = false;
             dataGridViewAdmins.MultiSelect = false;
-            context.Students.Load();
-            context.Professors.Load();
             InitializeStudentGridView();
             InitializeProfessorGridView();
+            InitializeAdminGridView();
             buttonAddUser.Click += ButtonAddUser_Click;
             buttonModifyUser.Click += ButtonModifyUser_Click;
             dataGridViewAdmins.SelectionChanged += (s, e) => ClearOtherSelections();
@@ -56,28 +55,53 @@ namespace ProjectTeam09
         private void InitializeProfessorGridView() {
             if (context.Professors != null)
             {
+                context.Professors.Load();
                 dataGridViewProfessors.DataSource = context.Professors.Local.ToBindingList();
             }
         }
-
+        private void InitializeAdminGridView() {
+            if (context.Admin != null) {
+                context.Admin.Load();
+                dataGridViewAdmins.DataSource = context.Admin.Local.ToBindingList();
+            }
+        }
         private void ButtonModifyUser_Click(object sender, EventArgs e)
         {
             if (dataGridViewProfessors.SelectedRows.Count != 0)
             {
-                AdminModifyForm adminModifyForm = new AdminModifyForm(dataGridViewProfessors.SelectedRows.ToString());
+                foreach (DataGridViewRow row in dataGridViewProfessors.SelectedRows)
+                {
+                    AdminProfessorModify professorsModifyForm = new AdminProfessorModify(row.DataBoundItem as Professor);
+                    professorsModifyForm.Show();
+                    return;
+                }
             }
             if (dataGridViewStudents.SelectedRows.Count != 0)
             {
-                AdminModifyForm adminModifyForm = new AdminModifyForm(dataGridViewStudents.SelectedRows.ToString());
+                foreach (DataGridViewRow row in dataGridViewStudents.SelectedRows)
+                {
+                    AdminStudentModify studentModiftyForm = new AdminStudentModify(row.DataBoundItem as Student);
+                    studentModiftyForm.Show();
+                    return;
+                }
             }
             if (dataGridViewAdmins.SelectedRows.Count != 0)
             {
-                AdminModifyForm adminModifyForm = new AdminModifyForm(dataGridViewStudents.SelectedRows.ToString());
+                //tostring doesnt work, need a solution to pass all values
+                foreach (DataGridViewRow row in dataGridViewAdmins.SelectedRows)
+                { 
+                    AdminAdminModifyForm adminModifyForm = new AdminAdminModifyForm(row.DataBoundItem as Admin);
+                    adminModifyForm.Show();
+                    return;
+                }
+
             }
+            MessageBox.Show("please make a proper selection");
         }
         private void ButtonAddUser_Click(object sender, EventArgs e)
         {
-            AdminAddForm adminAddForm = new AdminAddForm();   
+            AdminAddForm adminAddForm = new AdminAddForm();
+            adminAddForm.Show();
         }
     }
 }

@@ -41,36 +41,36 @@
             // dataGridViewStudents
             // 
             this.dataGridViewStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStudents.Location = new System.Drawing.Point(65, 59);
+            this.dataGridViewStudents.Location = new System.Drawing.Point(78, 29);
             this.dataGridViewStudents.Name = "dataGridViewStudents";
             this.dataGridViewStudents.RowHeadersWidth = 102;
             this.dataGridViewStudents.RowTemplate.Height = 40;
-            this.dataGridViewStudents.Size = new System.Drawing.Size(668, 135);
+            this.dataGridViewStudents.Size = new System.Drawing.Size(971, 211);
             this.dataGridViewStudents.TabIndex = 0;
             // 
             // dataGridViewProfessors
             // 
             this.dataGridViewProfessors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProfessors.Location = new System.Drawing.Point(65, 232);
+            this.dataGridViewProfessors.Location = new System.Drawing.Point(78, 267);
             this.dataGridViewProfessors.Name = "dataGridViewProfessors";
             this.dataGridViewProfessors.RowHeadersWidth = 102;
             this.dataGridViewProfessors.RowTemplate.Height = 40;
-            this.dataGridViewProfessors.Size = new System.Drawing.Size(668, 135);
+            this.dataGridViewProfessors.Size = new System.Drawing.Size(971, 215);
             this.dataGridViewProfessors.TabIndex = 1;
             // 
             // dataGridViewAdmins
             // 
             this.dataGridViewAdmins.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAdmins.Location = new System.Drawing.Point(65, 412);
+            this.dataGridViewAdmins.Location = new System.Drawing.Point(78, 508);
             this.dataGridViewAdmins.Name = "dataGridViewAdmins";
             this.dataGridViewAdmins.RowHeadersWidth = 102;
             this.dataGridViewAdmins.RowTemplate.Height = 40;
-            this.dataGridViewAdmins.Size = new System.Drawing.Size(668, 135);
+            this.dataGridViewAdmins.Size = new System.Drawing.Size(971, 202);
             this.dataGridViewAdmins.TabIndex = 2;
             // 
             // buttonAddUser
             // 
-            this.buttonAddUser.Location = new System.Drawing.Point(465, 605);
+            this.buttonAddUser.Location = new System.Drawing.Point(553, 767);
             this.buttonAddUser.Name = "buttonAddUser";
             this.buttonAddUser.Size = new System.Drawing.Size(193, 55);
             this.buttonAddUser.TabIndex = 3;
@@ -79,7 +79,7 @@
             // 
             // buttonModifyUser
             // 
-            this.buttonModifyUser.Location = new System.Drawing.Point(150, 605);
+            this.buttonModifyUser.Location = new System.Drawing.Point(133, 767);
             this.buttonModifyUser.Name = "buttonModifyUser";
             this.buttonModifyUser.Size = new System.Drawing.Size(209, 55);
             this.buttonModifyUser.TabIndex = 4;
@@ -90,7 +90,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(809, 730);
+            this.ClientSize = new System.Drawing.Size(1141, 1005);
             this.Controls.Add(this.buttonModifyUser);
             this.Controls.Add(this.buttonAddUser);
             this.Controls.Add(this.dataGridViewAdmins);
