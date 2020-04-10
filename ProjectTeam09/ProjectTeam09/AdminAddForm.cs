@@ -14,6 +14,9 @@ namespace ProjectTeam09
     public partial class AdminAddForm : Form
     {
         public StudentDirectory context = new StudentDirectory();
+        public int ProfessorID { get; set; }
+        public int StudentID { get; set; }
+        public int AdminID { get; set; }
         public AdminAddForm()
         { 
             InitializeComponent();
@@ -87,16 +90,18 @@ namespace ProjectTeam09
                         MessageBox.Show("there is no more room for Admins");
                         return;
                     }
-                    Admin admin = new Admin()
+                    context.Admin.Load();
+                    Admin admin = new Admin
                     {
                         AdminId = currentAdminID,
                         FirstName = textBoxFirstName.Text,
                         LastName = textBoxLastName.Text
                     }; 
-                    context.Admin.Load();
                     context.Admin.Add(admin);
+                    //this keeps throwing a weird error that says cant insert null adminID 
                     context.SaveChanges();
-
+                    AdminID = admin.AdminId;
+                    context.Dispose();
                 }
                 if (radioButtonProfessorSelect.Checked)
                 {
@@ -106,20 +111,22 @@ namespace ProjectTeam09
                         MessageBox.Show("there is no more room for Professors");
                         return;
                     }
-                    Professor professor = new Professor()
+                    context.Professors.Load();
+                    Professor professor = new Professor
                     {
                         ProfessorId = 3000 + (context.Professors.Count() + 1),
                         FirstName = textBoxFirstName.Text,
                         LastName = textBoxLastName.Text,
-                        Class1 = Int32.Parse(textBoxClass1.Text),
-                        Class2 = Int32.Parse(textBoxClass2.Text),
-                        Class3 = Int32.Parse(textBoxClass3.Text),
-                        Class4 = Int32.Parse(textBoxClass4.Text),
-                        Class5 = Int32.Parse(textBoxClass5.Text)
+                        Class1 = TestTextBox(textBoxClass1),
+                        Class2 = TestTextBox(textBoxClass2),
+                        Class3 = TestTextBox(textBoxClass3),
+                        Class4 = TestTextBox(textBoxClass4),
+                        Class5 = TestTextBox(textBoxClass5),
                     };
-                    context.Professors.Load();
                     context.Professors.Add(professor);
                     context.SaveChanges();
+                    ProfessorID = professor.ProfessorId;
+                    context.Dispose();
                 }
 
                 if (radioButtonStudentSelect.Checked)
@@ -130,12 +137,13 @@ namespace ProjectTeam09
                         MessageBox.Show("there is no more room for Student");
                         return;
                     }
-                    int Class1 = Int32.Parse(textBoxClass1.Text);
-                    int Class2 = Int32.Parse(textBoxClass2.Text);
-                    int Class3 = Int32.Parse(textBoxClass3.Text);
-                    int Class4 = Int32.Parse(textBoxClass4.Text);
-                    int Class5 = Int32.Parse(textBoxClass5.Text);
-                    Student student = new Student()
+                    int? Class1 = TestTextBox(textBoxClass1);
+                    int? Class2 = TestTextBox(textBoxClass2);
+                    int? Class3 = TestTextBox(textBoxClass3);
+                    int? Class4 = TestTextBox(textBoxClass4);
+                    int? Class5 = TestTextBox(textBoxClass5);
+                    context.Students.Load();
+                    Student student = new Student
                     {
                         StudentId = currentStudentID,
                         FirstName = textBoxFirstName.Text,
@@ -148,9 +156,10 @@ namespace ProjectTeam09
                         PhoneNumber = "",
                         Email=""
                     };
-                    context.Students.Load();
                     context.Students.Add(student);
                     context.SaveChanges();
+                    StudentID = student.StudentId;
+                    context.Dispose();
                 }
                 this.Close();
             }
@@ -158,6 +167,21 @@ namespace ProjectTeam09
                 MessageBox.Show("Please input BOTH first and last name");
                 return;
             }
+        }
+        private int? TestTextBox(TextBox textBox)
+        {
+            if (textBox.Text != "")
+            {
+                try
+                {
+                    return int.Parse(textBox.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("please enter a proper classID");
+                }
+            }
+            return null;
         }
     }
 }

@@ -32,6 +32,7 @@
             this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.labelID = new System.Windows.Forms.Label();
             this.labelUserType = new System.Windows.Forms.Label();
+            this.buttonModify = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxFirstName
@@ -66,11 +67,21 @@
             this.labelUserType.TabIndex = 15;
             this.labelUserType.Text = "Admin:";
             // 
+            // buttonModify
+            // 
+            this.buttonModify.Location = new System.Drawing.Point(76, 325);
+            this.buttonModify.Name = "buttonModify";
+            this.buttonModify.Size = new System.Drawing.Size(214, 72);
+            this.buttonModify.TabIndex = 16;
+            this.buttonModify.Text = "Modify";
+            this.buttonModify.UseVisualStyleBackColor = true;
+            // 
             // AdminAdminModifyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(374, 461);
+            this.Controls.Add(this.buttonModify);
             this.Controls.Add(this.labelUserType);
             this.Controls.Add(this.labelID);
             this.Controls.Add(this.textBoxLastName);
@@ -88,5 +99,6 @@
         private System.Windows.Forms.TextBox textBoxLastName;
         private System.Windows.Forms.Label labelID;
         private System.Windows.Forms.Label labelUserType;
+        private System.Windows.Forms.Button buttonModify;
     }
 }

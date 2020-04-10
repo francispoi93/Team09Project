@@ -72,7 +72,16 @@ namespace ProjectTeam09
                 foreach (DataGridViewRow row in dataGridViewProfessors.SelectedRows)
                 {
                     AdminProfessorModify professorsModifyForm = new AdminProfessorModify(row.DataBoundItem as Professor);
-                    professorsModifyForm.Show();
+                    professorsModifyForm.ShowDialog();
+                    context.Professors.Load();
+                    if (professorsModifyForm.ProfessorId >= 0)
+                    {
+                        var entity = context.Professors.Find(professorsModifyForm.ProfessorId);
+                        if (entity != null)
+                            context.Entry(entity).Reload();
+                    }
+                    dataGridViewProfessors.Refresh();
+                    context.SaveChanges();
                     return;
                 }
             }
@@ -81,17 +90,32 @@ namespace ProjectTeam09
                 foreach (DataGridViewRow row in dataGridViewStudents.SelectedRows)
                 {
                     AdminStudentModify studentModiftyForm = new AdminStudentModify(row.DataBoundItem as Student);
-                    studentModiftyForm.Show();
+                    studentModiftyForm.ShowDialog();
+                    if (studentModiftyForm.StudentId >= 0)
+                    {
+                        var entity = context.Students.Find(studentModiftyForm.StudentId);
+                        if (entity != null)
+                            context.Entry(entity).Reload();
+                    }
+                    dataGridViewStudents.Refresh();
+                    context.SaveChanges();
                     return;
                 }
             }
             if (dataGridViewAdmins.SelectedRows.Count != 0)
             {
-                //tostring doesnt work, need a solution to pass all values
                 foreach (DataGridViewRow row in dataGridViewAdmins.SelectedRows)
                 { 
                     AdminAdminModifyForm adminModifyForm = new AdminAdminModifyForm(row.DataBoundItem as Admin);
-                    adminModifyForm.Show();
+                    adminModifyForm.ShowDialog();
+                    if (adminModifyForm.AdminId >= 0)
+                    {
+                        var entity = context.Admin.Find(adminModifyForm.AdminId);
+                        if (entity != null)
+                            context.Entry(entity).Reload();
+                    }
+                    dataGridViewAdmins.Refresh();
+                    context.SaveChanges();
                     return;
                 }
 
@@ -101,7 +125,30 @@ namespace ProjectTeam09
         private void ButtonAddUser_Click(object sender, EventArgs e)
         {
             AdminAddForm adminAddForm = new AdminAddForm();
-            adminAddForm.Show();
+            adminAddForm.ShowDialog();
+            context.Students.Load();
+            context.Admin.Load();
+            context.Professors.Load();
+            if (adminAddForm.StudentID >= 0)
+            {
+                var entity = context.Students.Find(adminAddForm.StudentID);
+                if (entity != null)
+                    context.Entry(entity).Reload();
+            }     
+            if (adminAddForm.ProfessorID >= 0)
+            {
+                var entity = context.Professors.Find(adminAddForm.StudentID);
+                if (entity != null)
+                    context.Entry(entity).Reload();
+            }           
+            if (adminAddForm.AdminID >= 0)
+            {
+                var entity = context.Admin.Find(adminAddForm.StudentID);
+                if (entity != null)
+                    context.Entry(entity).Reload();
+            }
+            dataGridViewStudents.Refresh();
+            context.SaveChanges();
         }
     }
 }

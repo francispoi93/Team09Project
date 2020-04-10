@@ -9,6 +9,7 @@
     [Table("Admin")]
     public partial class Admin
     {
+        [Required]
         public int AdminId { get; set; }
 
         [Required]
