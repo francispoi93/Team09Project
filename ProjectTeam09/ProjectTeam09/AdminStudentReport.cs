@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjectTeam09
 {
-    public partial class AdminModifyForm : Form
+    public partial class AdminStudentReport : Form
     {
-        public AdminModifyForm(String modifyUser)
+        public AdminStudentReport()
         {
             InitializeComponent();
         }

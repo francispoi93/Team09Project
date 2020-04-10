@@ -29,8 +29,23 @@ namespace ProjectTeam09
             // Data has been added to UserCredentials for testing, permissions set as R = read, W = write, U=update, users 1000, 2000, 3000 added
             // passwords being admin, student, and professor respectively
             if (inputID=="admin") {
+                //MessageBox.Show("logging into admin");
                 AdminMainForm adminMainForm = new AdminMainForm(1000);
                 adminMainForm.Show();
+                return;
+            }
+            if (inputID == "professor")
+            {
+                //MessageBox.Show("logging into professor");
+                ProfessorMainForm professorForm = new ProfessorMainForm(3000);
+                professorForm.Show();
+                return;
+            }
+            if (inputID == "student")
+            {
+                //MessageBox.Show("logging into student");
+                StudentMainForm studentForm = new StudentMainForm(2000);
+                studentForm.Show();
                 return;
             }
             int userID = new int();
@@ -93,7 +108,7 @@ namespace ProjectTeam09
             }
             if (2999 < userId && userId < 3999) 
             {
-                MessageBox.Show("logging into prof");
+                MessageBox.Show("logging into professor");
                 ProfessorMainForm professorForm = new ProfessorMainForm(userId);
                 professorForm.Show();
             }

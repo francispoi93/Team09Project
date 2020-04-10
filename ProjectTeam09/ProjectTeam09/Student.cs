@@ -31,7 +31,6 @@ namespace ProjectTeam09
         public int? Class4 { get; set; }
 
         public int? Class5 { get; set; }
-
         public string PhoneNumber { get; set; }
 
         public string Email { get; set; }
