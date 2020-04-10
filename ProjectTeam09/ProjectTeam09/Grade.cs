@@ -7,9 +7,9 @@ namespace ProjectTeam09
     using System.Data.Entity.Spatial;
 
     public partial class Grade
-    {
-        [Key]
+    {        
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
         public int StudentId { get; set; }
 
         public int CourseId { get; set; }

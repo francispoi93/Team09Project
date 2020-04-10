@@ -35,11 +35,9 @@ namespace ProjectTeam09
 
             dataGridViewProfGrades.Rows.Clear();
 
-
             var queryFilterAssignment = from filterGrade in context.Grades
                                         where filterGrade.Assignment == listBoxAssignments.SelectedItem.ToString()
                                         select filterGrade;
-
 
             var queryDataGrid = from grades in context.Grades
                                 from student in context.Students

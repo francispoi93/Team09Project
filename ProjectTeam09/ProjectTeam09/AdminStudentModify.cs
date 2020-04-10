@@ -41,7 +41,8 @@ namespace ProjectTeam09
             TestTextBox(textBoxClass4,student.Class4);
             TestTextBox(textBoxClass5,student.Class5);
             try 
-            { 
+            {
+                MessageBox.Show(student.FirstName+ " " + student.LastName + " " + student.StudentId.ToString());
                 context.SaveChanges();
                 StudentId = student.StudentId;
                 context.Dispose();

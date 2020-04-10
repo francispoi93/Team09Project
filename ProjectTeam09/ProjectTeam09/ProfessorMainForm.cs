@@ -65,6 +65,7 @@ namespace ProjectTeam09
             {
                 new DataGridViewTextBoxColumn() {Name = "Course ID"},
                 new DataGridViewTextBoxColumn() {Name = "Course"},
+                new DataGridViewTextBoxColumn() {Name = "CourseNumber"},
                 new DataGridViewTextBoxColumn() {Name = "Section"},
             };
 
@@ -75,7 +76,7 @@ namespace ProjectTeam09
                         select courses;
             foreach (var s in query)
             {
-                dataGridViewProfessorCourses.Rows.Add(new string[] { s.CourseId.ToString(), s.CourseName, s.Section.ToString() });
+                dataGridViewProfessorCourses.Rows.Add(new string[] { s.CourseId.ToString(), s.CourseName,s.CourseNumber.ToString(), s.Section.ToString() });
             }
         }
 
