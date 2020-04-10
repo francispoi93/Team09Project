@@ -25,11 +25,6 @@ namespace ProjectTeam09
             context.Professors.Load();
             buttonAddUser.Click += ButtonAddUser_Click;
             radioButtonAdminSelect.CheckedChanged += (s, e) => DisableClassInput();
-            textBoxClass1.Text = "0";
-            textBoxClass2.Text = "0";
-            textBoxClass3.Text = "0";
-            textBoxClass4.Text = "0";
-            textBoxClass5.Text = "0";
         }
         private void DisableClassInput()
         {
