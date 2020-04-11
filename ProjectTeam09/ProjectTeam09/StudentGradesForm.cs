@@ -23,7 +23,9 @@ namespace ProjectTeam09
             InitializeComponent();
             InitializeDataGrid();
         }
-
+        /// <summary>
+        /// Initializes datagrid and filters based on student and class chosen.
+        /// </summary>
         private void InitializeDataGrid()
         {
           

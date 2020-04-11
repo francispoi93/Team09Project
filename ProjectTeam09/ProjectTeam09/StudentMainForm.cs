@@ -21,14 +21,15 @@ namespace ProjectTeam09
             StudentID = userId;
             InitializeComponent();
             InitializeForm(userId);
-            //when we do the coding, the grades button gets which class from the bottom dataGridView and student from top, both must be selected. 
-            //edit personal info button gets the student from dataGridView and on form load fills all the info textboxes 
-            //TODO personal info form
             buttonEditPersonalInfo.Click += ButtonEditPersonalInfo_Click;
             buttonShowGrades.Click += ButtonShowGrades_Click;
             buttonShowContent.Click += ButtonShowContent_Click;
         }
-
+        /// <summary>
+        /// Grabs the course ID from the selected row and opens up the show content form of the class chosen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonShowContent_Click(object sender, EventArgs e)
         {
             CourseID = 0;
@@ -45,7 +46,11 @@ namespace ProjectTeam09
                 MessageBox.Show("Please select a valid class.");
             }
         }
-
+        /// <summary>
+        /// Grabs the course ID from the selected row and opens up the view grades form of the class chosen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonShowGrades_Click(object sender, EventArgs e)
         {
             CourseID = 0;
@@ -68,7 +73,9 @@ namespace ProjectTeam09
 
 
         }
-
+        /// <summary>
+        /// Grabs the course ID from the selected row.
+        /// </summary>
         public void SelectedRows()
         {
             try
@@ -82,12 +89,20 @@ namespace ProjectTeam09
             {
             }
         }
+        /// <summary>
+        /// Opens up the personal info form based on the student ID.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonEditPersonalInfo_Click(object sender, EventArgs e)
         {
             StudentInfoForm studentForm = new StudentInfoForm(StudentID);
             studentForm.Show();
         }
-
+        /// <summary>
+        /// Initalizes datagrid based on student and the registered classes.
+        /// </summary>
+        /// <param name="userId"></param>
         private void InitializeForm(int userId)
         {
             context.Students.Load();
@@ -106,7 +121,8 @@ namespace ProjectTeam09
             dataGridViewAvailable.Columns.AddRange(columns);
 
             var query = from courses in context.Courses
-                        where courses.CourseId == student.Class1 || courses.CourseId == student.Class2
+                        where courses.CourseId == student.Class1 || courses.CourseId == student.Class2 || courses.CourseId == student.Class3
+                        || courses.CourseId == student.Class4 || courses.CourseId == student.Class5
                         select courses;
             foreach (var s in query)
             {

@@ -22,7 +22,11 @@ namespace ProjectTeam09
             InitializeForm();
             buttonModifyGrades.Click += ButtonModifyGrades_Click;
         }
-
+        /// <summary>
+        /// Saves any changes done on the datagrid and refreshes it.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonModifyGrades_Click(object sender, EventArgs e)
         {
             context.SaveChanges();
@@ -30,7 +34,9 @@ namespace ProjectTeam09
             dataGridViewProfGrades.Refresh();
             
         }
-
+        /// <summary>
+        /// Initializes datagrid based on the selected class. Filters only through grades associated with the class.
+        /// </summary>
         private void InitializeForm()
         {
             context.Students.Load();
