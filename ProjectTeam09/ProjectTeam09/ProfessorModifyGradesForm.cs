@@ -34,6 +34,47 @@ namespace ProjectTeam09
             dataGridViewProfGrades.Refresh();
             
         }
+
+        private void ButtonViewGrades_Click(object sender, EventArgs e)
+        {
+
+            dataGridViewProfGrades.Rows.Clear();
+            var queryFilterAssignment = from filterGrade in context.Grades
+                                        where filterGrade.Assignment == listBoxAssignments.SelectedItem.ToString()
+                                        select filterGrade;
+
+            var queryDataGrid = from grades in context.Grades
+                                from student in context.Students
+                                where grades.CourseId == CourseID
+                                where grades.Assignment == listBoxAssignments.SelectedItem.ToString()
+                                select new
+                                {
+                                    Grade = grades.Grade1,
+                                    StudentID = student.StudentId,
+                                    StudentFirstName = student.FirstName,
+                                    StudentLastName = student.LastName,
+                                };
+                foreach (var s in queryDataGrid)
+                {
+                    foreach (var h in queryFilterAssignment)
+                    {
+                        if (s.StudentID != h.StudentId)
+                        {
+                            dataGridViewProfGrades.Rows.Add(new string[] { s.StudentFirstName + " " + s.StudentLastName, "-" });
+
+                        }
+
+                        else
+                        {
+                            dataGridViewProfGrades.Rows.Add(new string[] { s.StudentFirstName + " " + s.StudentLastName, s.Grade.ToString() });
+
+                        }
+                    }
+                }
+            }
+
+        
+
         /// <summary>
         /// Initializes datagrid based on the selected class. Filters only through grades associated with the class.
         /// </summary>

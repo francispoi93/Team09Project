@@ -9,12 +9,13 @@ namespace ProjectTeam09
     [Table("Professor")]
     public partial class Professor
     {
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Professor()
         {
             Courses = new HashSet<Course>();
         }
-
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ProfessorId { get; set; }
 
         [Required]

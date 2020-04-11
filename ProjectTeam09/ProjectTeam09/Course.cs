@@ -9,6 +9,8 @@ namespace ProjectTeam09
     [Table("Course")]
     public partial class Course
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+
         public int CourseId { get; set; }
 
         [Required]

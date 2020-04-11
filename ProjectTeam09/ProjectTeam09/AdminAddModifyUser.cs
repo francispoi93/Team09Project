@@ -34,7 +34,7 @@ namespace ProjectTeam09
             {
                 dataGridViewAdmins.ClearSelection();
                 dataGridViewStudents.ClearSelection();
-            }          
+            }    
             if (dataGridViewStudents.SelectedRows.Count != 0)
             {
                 dataGridViewAdmins.ClearSelection();
@@ -77,8 +77,8 @@ namespace ProjectTeam09
                     if (professorsModifyForm.ProfessorId >= 0)
                     {
                         var entity = context.Professors.Find(professorsModifyForm.ProfessorId);
-                        if (entity != null)
-                            context.Entry(entity).Reload();
+//                        if (entity != null)
+//                           context.Entry(entity).Reload();
                     }
                     dataGridViewProfessors.Refresh();
                     context.SaveChanges();
@@ -91,11 +91,12 @@ namespace ProjectTeam09
                 {
                     AdminStudentModify studentModiftyForm = new AdminStudentModify(row.DataBoundItem as Student);
                     studentModiftyForm.ShowDialog();
+                    context.Students.Load();
                     if (studentModiftyForm.StudentId >= 0)
                     {
                         var entity = context.Students.Find(studentModiftyForm.StudentId);
-                        if (entity != null)
-                            context.Entry(entity).Reload();
+//                        if (entity != null)
+//                            context.Entry(entity).Reload();
                     }
                     dataGridViewStudents.Refresh();
                     context.SaveChanges();
@@ -108,17 +109,19 @@ namespace ProjectTeam09
                 { 
                     AdminAdminModifyForm adminModifyForm = new AdminAdminModifyForm(row.DataBoundItem as Admin);
                     adminModifyForm.ShowDialog();
+                    context.Admin.Load();
                     if (adminModifyForm.AdminId >= 0)
                     {
                         var entity = context.Admin.Find(adminModifyForm.AdminId);
-                        if (entity != null)
-                            context.Entry(entity).Reload();
+                        MessageBox.Show(entity.AdminId.ToString() + " " + entity.FirstName + " " + entity);
+//                        if (entity != null)
+//                            context.Entry(entity).Reload();
+ 
                     }
                     dataGridViewAdmins.Refresh();
                     context.SaveChanges();
                     return;
                 }
-
             }
             MessageBox.Show("please make a proper selection");
         }

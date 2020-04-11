@@ -9,6 +9,7 @@
     [Table("Admin")]
     public partial class Admin
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Required]
         public int AdminId { get; set; }
 

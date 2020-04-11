@@ -34,14 +34,12 @@
             this.buttonAddCourse = new System.Windows.Forms.Button();
             this.labelUserID = new System.Windows.Forms.Label();
             this.buttonAddModifyUser = new System.Windows.Forms.Button();
-            this.radioButtonProfReports = new System.Windows.Forms.RadioButton();
             this.buttonReportForm = new System.Windows.Forms.Button();
-            this.radioButtonStudentReports = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // buttonBackupXML
             // 
-            this.buttonBackupXML.Location = new System.Drawing.Point(161, 638);
+            this.buttonBackupXML.Location = new System.Drawing.Point(131, 494);
             this.buttonBackupXML.Name = "buttonBackupXML";
             this.buttonBackupXML.Size = new System.Drawing.Size(199, 105);
             this.buttonBackupXML.TabIndex = 0;
@@ -66,7 +64,7 @@
             // 
             // buttonAddCourse
             // 
-            this.buttonAddCourse.Location = new System.Drawing.Point(54, 507);
+            this.buttonAddCourse.Location = new System.Drawing.Point(34, 353);
             this.buttonAddCourse.Name = "buttonAddCourse";
             this.buttonAddCourse.Size = new System.Drawing.Size(147, 96);
             this.buttonAddCourse.TabIndex = 5;
@@ -84,52 +82,28 @@
             // 
             // buttonAddModifyUser
             // 
-            this.buttonAddModifyUser.Location = new System.Drawing.Point(254, 507);
+            this.buttonAddModifyUser.Location = new System.Drawing.Point(254, 353);
             this.buttonAddModifyUser.Name = "buttonAddModifyUser";
             this.buttonAddModifyUser.Size = new System.Drawing.Size(206, 96);
             this.buttonAddModifyUser.TabIndex = 7;
             this.buttonAddModifyUser.Text = "Add/Modify User";
             this.buttonAddModifyUser.UseVisualStyleBackColor = true;
             // 
-            // radioButtonProfReports
-            // 
-            this.radioButtonProfReports.AutoSize = true;
-            this.radioButtonProfReports.Location = new System.Drawing.Point(12, 309);
-            this.radioButtonProfReports.Name = "radioButtonProfReports";
-            this.radioButtonProfReports.Size = new System.Drawing.Size(279, 36);
-            this.radioButtonProfReports.TabIndex = 8;
-            this.radioButtonProfReports.TabStop = true;
-            this.radioButtonProfReports.Text = "Professor Reports";
-            this.radioButtonProfReports.UseVisualStyleBackColor = true;
-            // 
             // buttonReportForm
             // 
-            this.buttonReportForm.Location = new System.Drawing.Point(300, 309);
+            this.buttonReportForm.Location = new System.Drawing.Point(131, 218);
             this.buttonReportForm.Name = "buttonReportForm";
             this.buttonReportForm.Size = new System.Drawing.Size(250, 89);
             this.buttonReportForm.TabIndex = 9;
             this.buttonReportForm.Text = "Go to reports";
             this.buttonReportForm.UseVisualStyleBackColor = true;
             // 
-            // radioButtonStudentReports
-            // 
-            this.radioButtonStudentReports.AutoSize = true;
-            this.radioButtonStudentReports.Location = new System.Drawing.Point(12, 362);
-            this.radioButtonStudentReports.Name = "radioButtonStudentReports";
-            this.radioButtonStudentReports.Size = new System.Drawing.Size(257, 36);
-            this.radioButtonStudentReports.TabIndex = 10;
-            this.radioButtonStudentReports.TabStop = true;
-            this.radioButtonStudentReports.Text = "Student Reports";
-            this.radioButtonStudentReports.UseVisualStyleBackColor = true;
-            // 
             // AdminMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 1500);
-            this.Controls.Add(this.radioButtonStudentReports);
+            this.ClientSize = new System.Drawing.Size(532, 700);
             this.Controls.Add(this.buttonReportForm);
-            this.Controls.Add(this.radioButtonProfReports);
             this.Controls.Add(this.buttonAddModifyUser);
             this.Controls.Add(this.labelUserID);
             this.Controls.Add(this.buttonAddCourse);
@@ -151,8 +125,6 @@
         private System.Windows.Forms.Button buttonAddCourse;
         private System.Windows.Forms.Label labelUserID;
         private System.Windows.Forms.Button buttonAddModifyUser;
-        private System.Windows.Forms.RadioButton radioButtonProfReports;
         private System.Windows.Forms.Button buttonReportForm;
-        private System.Windows.Forms.RadioButton radioButtonStudentReports;
     }
 }
