@@ -46,24 +46,8 @@ namespace ProjectTeam09
             dataGridViewProfGrades.AllowUserToAddRows = true;
             dataGridViewProfGrades.AllowUserToOrderColumns = true;
 
-            DataGridViewTextBoxColumn[] columns = new DataGridViewTextBoxColumn[]
-            {
+            dataGridViewProfGrades.DataSource = context.Grades.Where(s => s.CourseId == CourseID).OrderBy(s=> s.Assignment).ToList();
 
-                new DataGridViewTextBoxColumn() {Name = "Student"},
-                new DataGridViewTextBoxColumn() {Name = "Assignment"},
-                new DataGridViewTextBoxColumn() {Name = "Grade"},
-
-            };
-
-            dataGridViewProfGrades.Columns.AddRange(columns);
-
-            var query = from grade in context.Grades
-                        where grade.CourseId == CourseID
-                        select grade;
-            foreach (var s in query)
-            {
-                dataGridViewProfGrades.Rows.Add(new string[] { s.StudentId.ToString(), s.Assignment, s.Grade1.ToString()});
-            }
 
         }
     }

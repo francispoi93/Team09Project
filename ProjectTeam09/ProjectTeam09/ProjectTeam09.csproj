@@ -135,6 +135,12 @@
     <Compile Include="ProfessorAdContentForm.Designer.cs">
       <DependentUpon>ProfessorAdContentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProfessorAddGradeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfessorAddGradeForm.Designer.cs">
+      <DependentUpon>ProfessorAddGradeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProfessorModifyGradesForm.cs">
       <SubType>Form</SubType>
     </Compile>

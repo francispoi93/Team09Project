@@ -10,6 +10,7 @@ namespace ProjectTeam09
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int Id { get; set; }
         public int StudentId { get; set; }
 
         public int CourseId { get; set; }
