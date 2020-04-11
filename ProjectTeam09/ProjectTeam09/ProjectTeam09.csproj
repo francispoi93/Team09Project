@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>ProjectTeam09</RootNamespace>
     <AssemblyName>ProjectTeam09</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -197,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProfessorAdContentForm.resx">
       <DependentUpon>ProfessorAdContentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfessorAddGradeForm.resx">
+      <DependentUpon>ProfessorAddGradeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProfessorMainForm.resx">
       <DependentUpon>ProfessorMainForm.cs</DependentUpon>

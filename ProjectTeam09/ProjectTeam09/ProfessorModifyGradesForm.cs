@@ -21,7 +21,18 @@ namespace ProjectTeam09
             CourseID = courseid;
             InitializeForm();
             buttonModifyGrades.Click += ButtonModifyGrades_Click;
+            buttonAddNewGrade.Click += ButtonAddNewGrade_Click;
         }
+
+        private void ButtonAddNewGrade_Click(object sender, EventArgs e)
+        {
+            ProfessorAddGradeForm contentForm = new ProfessorAddGradeForm(CourseID);
+            contentForm.Show();
+           
+           
+            
+        }
+
         /// <summary>
         /// Saves any changes done on the datagrid and refreshes it.
         /// </summary>
@@ -35,43 +46,6 @@ namespace ProjectTeam09
             
         }
 
-        private void ButtonViewGrades_Click(object sender, EventArgs e)
-        {
-
-            dataGridViewProfGrades.Rows.Clear();
-            var queryFilterAssignment = from filterGrade in context.Grades
-                                        where filterGrade.Assignment == listBoxAssignments.SelectedItem.ToString()
-                                        select filterGrade;
-
-            var queryDataGrid = from grades in context.Grades
-                                from student in context.Students
-                                where grades.CourseId == CourseID
-                                where grades.Assignment == listBoxAssignments.SelectedItem.ToString()
-                                select new
-                                {
-                                    Grade = grades.Grade1,
-                                    StudentID = student.StudentId,
-                                    StudentFirstName = student.FirstName,
-                                    StudentLastName = student.LastName,
-                                };
-                foreach (var s in queryDataGrid)
-                {
-                    foreach (var h in queryFilterAssignment)
-                    {
-                        if (s.StudentID != h.StudentId)
-                        {
-                            dataGridViewProfGrades.Rows.Add(new string[] { s.StudentFirstName + " " + s.StudentLastName, "-" });
-
-                        }
-
-                        else
-                        {
-                            dataGridViewProfGrades.Rows.Add(new string[] { s.StudentFirstName + " " + s.StudentLastName, s.Grade.ToString() });
-
-                        }
-                    }
-                }
-            }
 
         
 
@@ -83,7 +57,7 @@ namespace ProjectTeam09
             context.Students.Load();
             context.Courses.Load();
             context.Grades.Load();
-            dataGridViewProfGrades.AllowUserToDeleteRows = false;
+            dataGridViewProfGrades.AllowUserToDeleteRows = true;
             dataGridViewProfGrades.AllowUserToAddRows = true;
             dataGridViewProfGrades.AllowUserToOrderColumns = true;
 

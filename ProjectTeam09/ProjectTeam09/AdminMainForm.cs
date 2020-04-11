@@ -26,7 +26,7 @@ namespace ProjectTeam09
 
         public void BackupDataSetToXML()
         {
-            XElement backup = new XElement("Student Directory", 
+            XElement backup = new XElement("StudentDirectory", 
                 (from admin in context.Admin
                 select new
                 {
