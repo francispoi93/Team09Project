@@ -59,7 +59,6 @@ namespace ProjectTeam09
                 dataGridViewProfGrades.Rows.Add(new string[] { s.StudentId.ToString(), s.Assignment, s.Grade1.ToString()});
             }
 
-
         }
     }
 }
