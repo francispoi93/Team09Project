@@ -27,6 +27,7 @@ namespace ProjectTeam09
         public void BackupDataSetToXML()
         {
             XElement backup = new XElement("Student Directory", 
+                
                 (from admin in context.Admin
                 select new
                 {
@@ -39,6 +40,7 @@ namespace ProjectTeam09
                     new XAttribute("FirstName",x.FirstName),
                     new XAttribute("LastName",x.LastName)
                     )),
+                    
                 (from prof in context.Professors
                  select new
                  {
@@ -62,6 +64,7 @@ namespace ProjectTeam09
                     new XAttribute("Class4", x.Class4),
                     new XAttribute("Class5", x.Class5)
                     )),
+         
                 (from student in context.Students
                  select new 
                  { 
@@ -90,6 +93,7 @@ namespace ProjectTeam09
                     new XAttribute("PhoneNumber", x.PhoneNumber),                       
                     new XAttribute("Email", x.Email)                   
                         )),
+
                 (from courses in context.Courses
                  select new 
                  { 

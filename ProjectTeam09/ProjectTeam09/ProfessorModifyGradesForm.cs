@@ -35,7 +35,7 @@ namespace ProjectTeam09
             
         }
 
-        private void ButtonViewGrades_Click(object sender, EventArgs e)
+       /* private void ButtonViewGrades_Click(object sender, EventArgs e)
         {
 
             dataGridViewProfGrades.Rows.Clear();
@@ -74,7 +74,7 @@ namespace ProjectTeam09
             }
 
         
-
+    */
         /// <summary>
         /// Initializes datagrid based on the selected class. Filters only through grades associated with the class.
         /// </summary>
