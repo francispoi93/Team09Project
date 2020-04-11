@@ -45,7 +45,7 @@ namespace ProjectTeam09
                 {
                 }
                 var contextCourse = context.Courses.Find(CourseID);
-                ProfessorModifyGradesForm contentForm = new ProfessorModifyGradesForm(contextCourse.CourseId);
+                ProfessorModifyGradesForm contentForm = new ProfessorModifyGradesForm(CourseID);
                 contentForm.Show();
             }
             catch

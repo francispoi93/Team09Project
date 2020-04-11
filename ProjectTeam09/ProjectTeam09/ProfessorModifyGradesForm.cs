@@ -27,6 +27,8 @@ namespace ProjectTeam09
         {
             context.SaveChanges();
             MessageBox.Show("Changes saved.");
+            dataGridViewProfGrades.Refresh();
+            
         }
 
         private void InitializeForm()
@@ -39,7 +41,6 @@ namespace ProjectTeam09
             dataGridViewProfGrades.AllowUserToOrderColumns = true;
 
             dataGridViewProfGrades.DataSource = context.Grades.Where(s => s.CourseId == CourseID).ToList();
-
 
 
         }
