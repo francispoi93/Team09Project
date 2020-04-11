@@ -108,12 +108,6 @@
     <Compile Include="AdminStudentModify.Designer.cs">
       <DependentUpon>AdminStudentModify.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminStudentReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminStudentReport.Designer.cs">
-      <DependentUpon>AdminStudentReport.cs</DependentUpon>
-    </Compile>
     <Compile Include="Course.cs" />
     <Compile Include="CourseContentForm.cs">
       <SubType>Form</SubType>
