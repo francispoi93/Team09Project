@@ -12,6 +12,10 @@ namespace ProjectTeam09
 {
     public partial class ProfessorAdContentForm : Form
     {
+        /// <summary>
+        /// Loads the path from the databse with the files. Professor can drag and drop items into the path.
+        /// </summary>
+        /// <param name="path"></param>
         public ProfessorAdContentForm(string path)
         {
             InitializeComponent();

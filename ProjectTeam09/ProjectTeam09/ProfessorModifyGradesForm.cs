@@ -20,14 +20,21 @@ namespace ProjectTeam09
             InitializeComponent();
             CourseID = courseid;
             InitializeForm();
-            buttonViewGrades.Click += ButtonViewGrades_Click;
-            buttonAddAssingment.Click += ButtonAddAssingment_Click;
+            buttonModifyGrades.Click += ButtonModifyGrades_Click;
         }
-
-        private void ButtonAddAssingment_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Saves any changes done on the datagrid and refreshes it.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonModifyGrades_Click(object sender, EventArgs e)
         {
-            listBoxAssignments.Items.Add(textBoxAddAssignment.Text);
+            context.SaveChanges();
+            MessageBox.Show("Changes saved.");
+            dataGridViewProfGrades.Refresh();
+            
         }
+<<<<<<< HEAD
 
 
         private void ButtonViewGrades_Click(object sender, EventArgs e)
@@ -72,38 +79,38 @@ namespace ProjectTeam09
 
         
 
+=======
+        /// <summary>
+        /// Initializes datagrid based on the selected class. Filters only through grades associated with the class.
+        /// </summary>
+>>>>>>> master
         private void InitializeForm()
         {
             context.Students.Load();
             context.Courses.Load();
             context.Grades.Load();
-
-            var query = from grades in context.Grades
-                        where grades.CourseId == CourseID
-                        select new
-                        {
-                            Assignment = grades.Assignment
-                        };
-            foreach (var s in query)
-            {
-                if (listBoxAssignments.Items.Contains(s.Assignment))
-                {
-                }
-                else
-                {
-                    listBoxAssignments.Items.Add(s.Assignment);
-                }
-            }
             dataGridViewProfGrades.AllowUserToDeleteRows = false;
-
+            dataGridViewProfGrades.AllowUserToAddRows = true;
+            dataGridViewProfGrades.AllowUserToOrderColumns = true;
 
             DataGridViewTextBoxColumn[] columns = new DataGridViewTextBoxColumn[]
             {
-                new DataGridViewTextBoxColumn() {Name = "Student Name"},
+
+                new DataGridViewTextBoxColumn() {Name = "Student"},
+                new DataGridViewTextBoxColumn() {Name = "Assignment"},
                 new DataGridViewTextBoxColumn() {Name = "Grade"},
+
             };
+
             dataGridViewProfGrades.Columns.AddRange(columns);
 
+            var query = from grade in context.Grades
+                        where grade.CourseId == CourseID
+                        select grade;
+            foreach (var s in query)
+            {
+                dataGridViewProfGrades.Rows.Add(new string[] { s.StudentId.ToString(), s.Assignment, s.Grade1.ToString()});
+            }
 
         }
     }
