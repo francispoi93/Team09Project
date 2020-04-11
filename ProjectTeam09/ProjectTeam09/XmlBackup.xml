@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StudentDirectory>
+  <Admins>
+    <Admin AdminId="1001" FirstName="Annie" LastNameS="Eddison" />
+    <Admin AdminId="1002" FirstName="Jeff" LastNameS="Winger" />
+  </Admins>
+  <Professors>
+    <Professor ProfessorId="3000" FirstName="Michael" LastName="Hrybrk" Class1="1" Class2="0" Class3="0" Class4="0" Class5="0" />
+    <Professor ProfessorId="3001" FirstName="Bob" LastName="Marley" Class1="2" Class2="0" Class3="0" Class4="0" Class5="0" />
+  </Professors>
+  <Student>
+    <Students StudentId="2000" FirstName="Jimmy" LastName="Neutron" GPA="0" Class1="1" Class2="2" Class3="0" Class4="0" Class5="0" PhoneNumber="999-999-9999" Email="jimmyneutron@gmail.com" />
+    <Students StudentId="2001" FirstName="Richard" LastName="Little" GPA="0" Class1="1" Class2="2" Class3="0" Class4="0" Class5="0" PhoneNumber="488-985-7788" Email="richardlittle@gmail.com" />
+  </Student>
+  <Courses>
+    <Course CourseId="1" CourseName="Client Server Systems" CourseNumber="3540" ProfessorId="3000" Section="1" MaxCourseSize="35" DocumentsFolder="\\..\\..\\Content\\1" />
+    <Course CourseId="2" CourseName="Network Security" CourseNumber="3155" ProfessorId="3001" Section="1" MaxCourseSize="35" DocumentsFolder="\\..\\..\\Content\\2" />
+  </Courses>
+  <UserCredentials>
+    <UserCredentials UserID="1000" Password="password" Permissions="RWU" />
+    <UserCredentials UserID="2000" Password="student" Permissions="R" />
+    <UserCredentials UserID="3000" Password="professor" Permissions="RW" />
+  </UserCredentials>
+  <Grades>
+    <Grades StudentId="2000" CourseId="1" Assignment="Lab" Grade1="90" />
+    <Grades StudentId="2000" CourseId="1" Assignment="Test" Grade1="88" />
+    <Grades StudentId="2001" CourseId="1" Assignment="Lab" Grade1="75" />
+    <Grades StudentId="2001" CourseId="1" Assignment="Test" Grade1="80" />
+    <Grades StudentId="2000" CourseId="1" Assignment="Lab2" Grade1="76" />
+  </Grades>
+</StudentDirectory>

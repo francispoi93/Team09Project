@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,8 +27,9 @@ namespace ProjectTeam09
 
         public void BackupDataSetToXML()
         {
-            XElement backup = new XElement("Student Directory", 
-                
+           
+            XElement backup = new XElement("StudentDirectory", 
+                new XElement("Admins",
                 (from admin in context.Admin
                 select new
                 {
@@ -35,13 +37,13 @@ namespace ProjectTeam09
                    admin.FirstName,
                    admin.LastName
                 }).ToList().Select(
-                    x => new XElement("Admin",
-                    new XAttribute("AdminID",x.AdminId),
-                    new XAttribute("FirstName",x.FirstName),
-                    new XAttribute("LastName",x.LastName)
-                    )),
-                    
-                (from prof in context.Professors
+                    x => new XElement("Admin", 
+                    new XAttribute("AdminId" , x.AdminId.ToString()),
+                    new XAttribute("FirstName" , x.FirstName),
+                    new XAttribute("LastNameS" , x.LastName)
+                    ))),
+                new XElement("Professors",
+                 (from prof in context.Professors
                  select new
                  {
                      prof.ProfessorId,
@@ -58,13 +60,13 @@ namespace ProjectTeam09
                     new XAttribute("ProfessorId", x.ProfessorId),
                     new XAttribute("FirstName", x.FirstName),
                     new XAttribute("LastName", x.LastName),
-                    new XAttribute("Class1", x.Class1),
-                    new XAttribute("Class2", x.Class2),
-                    new XAttribute("Class3", x.Class3),
-                    new XAttribute("Class4", x.Class4),
-                    new XAttribute("Class5", x.Class5)
-                    )),
-         
+                    new XAttribute("Class1", x.Class1 ?? 000),
+                    new XAttribute("Class2", x.Class2 ?? 000),
+                    new XAttribute("Class3", x.Class3 ?? 000),
+                    new XAttribute("Class4", x.Class4 ?? 000),
+                    new XAttribute("Class5", x.Class5 ?? 000)
+                    ))),
+                new XElement("Student",
                 (from student in context.Students
                  select new 
                  { 
@@ -80,20 +82,20 @@ namespace ProjectTeam09
                     student.PhoneNumber,
                     student.Email,
                  }).ToList().Select(
-                    x=> new XElement("Student",
+                    x=> new XElement("Students",
                     new XAttribute("StudentId", x.StudentId),                       
                     new XAttribute("FirstName", x.FirstName),                       
                     new XAttribute("LastName", x.LastName),                       
                     new XAttribute("GPA", x.GPA),                       
-                    new XAttribute("Class1", x.Class1),                       
-                    new XAttribute("Class2", x.Class2),                       
-                    new XAttribute("Class3", x.Class3),                       
-                    new XAttribute("Class4", x.Class4),                       
-                    new XAttribute("Class5", x.Class5),                       
+                    new XAttribute("Class1", x.Class1 ?? 000),                       
+                    new XAttribute("Class2", x.Class2 ?? 000),                       
+                    new XAttribute("Class3", x.Class3 ?? 000),                       
+                    new XAttribute("Class4", x.Class4 ?? 000),                       
+                    new XAttribute("Class5", x.Class5 ?? 000),                       
                     new XAttribute("PhoneNumber", x.PhoneNumber),                       
                     new XAttribute("Email", x.Email)                   
-                        )),
-
+                        ))),
+                new XElement("Courses",
                 (from courses in context.Courses
                  select new 
                  { 
@@ -113,7 +115,8 @@ namespace ProjectTeam09
                    new XAttribute("Section",x.Section),
                    new XAttribute("MaxCourseSize",x.MaxCourseSize),
                    new XAttribute("DocumentsFolder",x.DocumentsFolder)
-                   )),
+                   ))),
+                new XElement("UserCredentials",
                 (from user in context.UserCredentials
                  select new { 
                      user.UserId,
@@ -124,7 +127,8 @@ namespace ProjectTeam09
                  new XAttribute("UserID", x.UserId),
                  new XAttribute("Password", x.Password),
                  new XAttribute("Permissions", x.Permissions)
-                 )), 
+                 ))), 
+                new XElement("Grades",
                 (from grades in context.Grades
                  select new
                  {
@@ -138,8 +142,10 @@ namespace ProjectTeam09
                     new XAttribute("CourseId", x.CourseId),
                     new XAttribute("Assignment", x.Assignment),
                     new XAttribute("Grade1", x.Grade1)
-                    ))
+                    )))
                 );
+            backup.Save("../../XmlBackup.xml");
+            MessageBox.Show("backup saved to XML");
         }
         private void ReportFormCaller() {
             AdminProfessorReport adminProfessorReport = new AdminProfessorReport();
