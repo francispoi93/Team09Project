@@ -27,6 +27,8 @@ namespace ProjectTeam09
         {
             context.SaveChanges();
             MessageBox.Show("Changes saved.");
+            dataGridViewProfGrades.Refresh();
+            
         }
 
         private void InitializeForm()
@@ -38,8 +40,24 @@ namespace ProjectTeam09
             dataGridViewProfGrades.AllowUserToAddRows = true;
             dataGridViewProfGrades.AllowUserToOrderColumns = true;
 
-            dataGridViewProfGrades.DataSource = context.Grades.Where(s => s.CourseId == CourseID).ToList();
+            DataGridViewTextBoxColumn[] columns = new DataGridViewTextBoxColumn[]
+            {
 
+                new DataGridViewTextBoxColumn() {Name = "Student"},
+                new DataGridViewTextBoxColumn() {Name = "Assignment"},
+                new DataGridViewTextBoxColumn() {Name = "Grade"},
+
+            };
+
+            dataGridViewProfGrades.Columns.AddRange(columns);
+
+            var query = from grade in context.Grades
+                        where grade.CourseId == CourseID
+                        select grade;
+            foreach (var s in query)
+            {
+                dataGridViewProfGrades.Rows.Add(new string[] { s.StudentId.ToString(), s.Assignment, s.Grade1.ToString()});
+            }
 
 
         }
