@@ -22,7 +22,11 @@ namespace ProjectTeam09
             InitializeForm();
             buttonAddGrade.Click += ButtonAddGrade_Click;
         }
-
+        /// <summary>
+        /// Grabs the information that was inputted and adds it to the database.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonAddGrade_Click(object sender, EventArgs e)
         {
             try
@@ -31,13 +35,18 @@ namespace ProjectTeam09
                     Grade1 = Double.Parse(textBoxGrade.Text) });
                 context.SaveChanges();
                 MessageBox.Show("Grade added.");
+                ProfessorModifyGradesForm content = new ProfessorModifyGradesForm(CourseID);
+                content.Show();
+                this.Close();
              }
             catch
             {
                 MessageBox.Show("An error has occured while adding the grade. Please make sure all the entries are correct.");
             }
         }
-
+        /// <summary>
+        /// Sets listbox.
+        /// </summary>
         private void InitializeForm()
         {
             var query = from student in context.Students

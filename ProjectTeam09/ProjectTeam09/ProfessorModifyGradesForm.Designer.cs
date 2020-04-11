@@ -66,7 +66,7 @@
             // 
             // buttonAddNewGrade
             // 
-            this.buttonAddNewGrade.Location = new System.Drawing.Point(543, 218);
+            this.buttonAddNewGrade.Location = new System.Drawing.Point(543, 148);
             this.buttonAddNewGrade.Name = "buttonAddNewGrade";
             this.buttonAddNewGrade.Size = new System.Drawing.Size(285, 69);
             this.buttonAddNewGrade.TabIndex = 6;

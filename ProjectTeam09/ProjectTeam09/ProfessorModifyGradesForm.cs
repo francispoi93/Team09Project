@@ -24,12 +24,16 @@ namespace ProjectTeam09
             buttonAddNewGrade.Click += ButtonAddNewGrade_Click;
         }
 
+        /// <summary>
+        /// Allows user to add a new grade to the database.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonAddNewGrade_Click(object sender, EventArgs e)
         {
             ProfessorAddGradeForm contentForm = new ProfessorAddGradeForm(CourseID);
             contentForm.Show();
-           
-           
+            this.Close();
             
         }
 
@@ -45,10 +49,6 @@ namespace ProjectTeam09
             dataGridViewProfGrades.Refresh();
             
         }
-
-
-        
-
         /// <summary>
         /// Initializes datagrid based on the selected class. Filters only through grades associated with the class.
         /// </summary>
@@ -57,12 +57,12 @@ namespace ProjectTeam09
             context.Students.Load();
             context.Courses.Load();
             context.Grades.Load();
+
             dataGridViewProfGrades.AllowUserToDeleteRows = true;
             dataGridViewProfGrades.AllowUserToAddRows = true;
             dataGridViewProfGrades.AllowUserToOrderColumns = true;
 
-            dataGridViewProfGrades.DataSource = context.Grades.Where(s => s.CourseId == CourseID).OrderBy(s=> s.Assignment).ToList();
-
+            dataGridViewProfGrades.DataSource = context.Grades.OrderBy(s => s.Assignment).Where(s => s.CourseId == CourseID).ToList();
 
         }
     }
