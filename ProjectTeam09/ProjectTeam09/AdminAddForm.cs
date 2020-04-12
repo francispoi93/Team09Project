@@ -26,6 +26,9 @@ namespace ProjectTeam09
             buttonAddUser.Click += ButtonAddUser_Click;
             radioButtonAdminSelect.CheckedChanged += (s, e) => DisableClassInput();
         }
+        /// <summary>
+        /// when you select a radiobutton for admin it disables uneeded inputs, and when it is unselected enables them again.
+        /// </summary>
         private void DisableClassInput()
         {
             if (radioButtonAdminSelect.Checked == true)
@@ -69,16 +72,19 @@ namespace ProjectTeam09
         }
         private void ButtonAddUser_Click(object sender, EventArgs e)
         {
+            //if there isnt anything selected it tells you to select
             if(radioButtonAdminSelect.Checked == false && radioButtonStudentSelect.Checked == false && radioButtonProfessorSelect.Checked == false)
             {
                 MessageBox.Show("Please select a user type.");
                 return;
             }
+            //makes sure essential fields are filled
             if (textBoxFirstName.Text != null && textBoxLastName.Text != null)
             {
+                //radio button determining admin
                 if (radioButtonAdminSelect.Checked)
                 {
-                  
+                    //iterates the userID
                     int currentAdminID = 1000 +(context.Admin.Count()+1);
                     if (currentAdminID >= 2000)
                     {
@@ -86,6 +92,7 @@ namespace ProjectTeam09
                         return;
                     }
                     context.Admin.Load();
+                    //creates an admin from input then adds it to the database then saves it
                     Admin admin = new Admin
                     {
                         AdminId = currentAdminID,
@@ -93,13 +100,13 @@ namespace ProjectTeam09
                         LastName = textBoxLastName.Text
                     }; 
                     context.Admin.Add(admin);
-                    //this keeps throwing a weird error that says cant insert null adminID 
                     context.SaveChanges();
                     AdminID = admin.AdminId;
                     context.Dispose();
                 }
                 if (radioButtonProfessorSelect.Checked)
                 {
+                    //iterates the userId
                     int currentProfessorID = 3000 + (context.Professors.Count() + 1);
                     if(currentProfessorID>= 4000)
                     {
@@ -107,6 +114,7 @@ namespace ProjectTeam09
                         return;
                     }
                     context.Professors.Load();
+                    //creates a professor and then adds it to the database and saves it.
                     Professor professor = new Professor
                     {
                         ProfessorId = 3000 + (context.Professors.Count() + 1),
@@ -123,7 +131,7 @@ namespace ProjectTeam09
                     ProfessorID = professor.ProfessorId;
                     context.Dispose();
                 }
-
+                //radio button determining student user type
                 if (radioButtonStudentSelect.Checked)
                 {
                     int currentStudentID = 2000 + (context.Students.Count() + 1);
@@ -132,12 +140,14 @@ namespace ProjectTeam09
                         MessageBox.Show("there is no more room for Student");
                         return;
                     }
+                    //checks class inputs
                     int? Class1 = TestTextBox(textBoxClass1);
                     int? Class2 = TestTextBox(textBoxClass2);
                     int? Class3 = TestTextBox(textBoxClass3);
                     int? Class4 = TestTextBox(textBoxClass4);
                     int? Class5 = TestTextBox(textBoxClass5);
                     context.Students.Load();
+                    //creates a student and adds it to the database before saving
                     Student student = new Student
                     {
                         StudentId = currentStudentID,
@@ -163,6 +173,11 @@ namespace ProjectTeam09
                 return;
             }
         }
+        /// <summary>
+        /// this is just validating if the field is filled and then assigning it, so no ridiculous if statements.
+        /// </summary>
+        /// <param name="textBox"></param>
+        /// <returns></returns>
         private int? TestTextBox(TextBox textBox)
         {
             if (textBox.Text != "")

@@ -17,6 +17,9 @@ namespace ProjectTeam09
     {
         public int UserId { get; set; }
         public StudentDirectory context = new StudentDirectory();
+        /// <summary>
+        /// just a basic initialization
+        /// </summary>
         public LoginForm()
         {
             context.UserCredentials.Load();
@@ -28,26 +31,27 @@ namespace ProjectTeam09
         {
             // Data has been added to UserCredentials for testing, permissions set as R = read, W = write, U=update, users 1000, 2000, 3000 added
             // passwords being admin, student, and professor respectively
+            //bypasses login screen to admin main
             if (inputID=="admin") {
-                //MessageBox.Show("logging into admin");
                 AdminMainForm adminMainForm = new AdminMainForm(1000);
                 adminMainForm.Show();
                 return;
             }
+            //bypasses login screen to professor main
             if (inputID == "professor")
             {
-                //MessageBox.Show("logging into professor");
                 ProfessorMainForm professorForm = new ProfessorMainForm(3000);
                 professorForm.Show();
                 return;
             }
+            //bypasses login screen to student main
             if (inputID == "student")
             {
-                //MessageBox.Show("logging into student");
                 StudentMainForm studentForm = new StudentMainForm(2000);
                 studentForm.Show();
                 return;
             }
+            //gets id from text box input and makes sure it parses 
             int userID = new int();
             try
             {
@@ -56,7 +60,6 @@ namespace ProjectTeam09
             catch
             {
                 MessageBox.Show("your input for ID is in an improper format");
-
                 try
                 {
                     var userid = context.UserCredentials.Find(userID);
@@ -78,6 +81,8 @@ namespace ProjectTeam09
                 return;
 
             }
+            //if it doesnt get caught by the above statement then there must be something wrong,
+            //this is determining the problem and displaying it
              UserCredential user = context.UserCredentials.Find(userID);
              if (user == null) {
                 MessageBox.Show("UserID: " + userID + " is not in the database");
@@ -92,6 +97,10 @@ namespace ProjectTeam09
                  MessageBox.Show("your password is incorrect real password is" + user.Password);
              }
         }
+        /// <summary>
+        /// recieves passed userID and displays appropriate form
+        /// </summary>
+        /// <param name="userId"></param>
         public void LoginInitialization(int userId)
         {
             if (999 < userId && userId < 1999)

@@ -20,6 +20,10 @@ namespace ProjectTeam09
             InitializeDisplays(professorModify);
             buttonModify.Click += (s, e) => ModifyCommit(professorModify);
         }
+        /// <summary>
+        /// initializes the text boxes based on the current values of the user
+        /// </summary>
+        /// <param name="professor"></param>
         public void InitializeDisplays(Professor professor)
         {
             labelID.Text = professor.ProfessorId.ToString();
@@ -31,6 +35,10 @@ namespace ProjectTeam09
             textBoxClass4.Text = professor.Class4.ToString();
             textBoxClass5.Text = professor.Class5.ToString();
         }
+        /// <summary>
+        /// modifies the user based on the changes to the textboxes then saves it.
+        /// </summary>
+        /// <param name="professor"></param>
         public void ModifyCommit(Professor professor) {
             try
             { 
@@ -52,6 +60,11 @@ namespace ProjectTeam09
                 MessageBox.Show("An error has occured when updating this Professor. " + exception);
             }
         }
+        /// <summary>
+        /// validation on the textboxes to make sure they have value
+        /// </summary>
+        /// <param name="textBox"></param>
+        /// <param name="classId"></param>
         private void TestTextBox(TextBox textBox, int? classId)
         {
             if (textBox.Text != "")

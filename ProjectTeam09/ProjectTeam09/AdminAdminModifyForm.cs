@@ -20,12 +20,20 @@ namespace ProjectTeam09
             InitializeDisplays(modifyUser);
             buttonModify.Click +=(s,e) => ModifyCommit(modifyUser);
         }
+        /// <summary>
+        /// fills text boxes with current values of the user
+        /// </summary>
+        /// <param name="user"></param>
         public void InitializeDisplays(Admin user)
         {
             labelID.Text = user.AdminId.ToString();
             textBoxFirstName.Text = user.FirstName;
             textBoxLastName.Text = user.LastName;
         }
+        /// <summary>
+        /// modifies the user values based on what changes where made to the textboxes then saves changes
+        /// </summary>
+        /// <param name="admin"></param>
         public void ModifyCommit(Admin admin) {
             if (textBoxFirstName.Text != "" && textBoxLastName.Text != "")
             {

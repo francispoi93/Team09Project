@@ -24,10 +24,13 @@ namespace ProjectTeam09
             buttonAddModifyUser.Click += (s,e) => AddModifyUser();
             buttonReportForm.Click += (s,e) => ReportFormCaller();
         }
-
+        /// <summary>
+        /// backs up data to xml, I had to do it more hands on than using the 
+        /// serializer because it doesnt handle custom classes very well
+        /// </summary>
         public void BackupDataSetToXML()
         {
-           
+           //this uses linq and some XML classes to construct the architecture then fills in the values from the database
             XElement backup = new XElement("StudentDirectory", 
                 new XElement("Admins",
                 (from admin in context.Admin
@@ -147,20 +150,33 @@ namespace ProjectTeam09
             backup.Save("../../XmlBackup.xml");
             MessageBox.Show("backup saved to XML");
         }
+        /// <summary>
+        /// calls reports
+        /// </summary>
         private void ReportFormCaller() {
             AdminProfessorReport adminProfessorReport = new AdminProfessorReport();
             adminProfessorReport.Show();
         }
+       /// <summary>
+       /// calls the form for adding and modify users
+       /// </summary>
         public void AddModifyUser() 
         {
             AdminAddUser addUser = new AdminAddUser();
             addUser.Show();
         }
+        /// <summary>
+        /// calls the add course form
+        /// </summary>
         public void AddCourse() 
         {
             AdminAddCourse addCourse = new AdminAddCourse();
             addCourse.Show();
         }
+        /// <summary>
+        /// the searching function to see what the user that needs help sees
+        /// </summary>
+        /// <param name="userId"></param>
         public void IdView(int userId)
         {
             int viewId = new int();

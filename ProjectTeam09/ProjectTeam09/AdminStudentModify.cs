@@ -20,6 +20,10 @@ namespace ProjectTeam09
             InitializeDisplays(studentModify);
             buttonModify.Click += (s, e) => modifyCommit(studentModify);
         }
+        /// <summary>
+        /// initializes text boxes based on the values of the user
+        /// </summary>
+        /// <param name="student"></param>
         public void InitializeDisplays(Student student)
         {
             labelID.Text = student.StudentId.ToString();
@@ -31,6 +35,10 @@ namespace ProjectTeam09
             textBoxClass4.Text = student.Class4.ToString();
             textBoxClass5.Text = student.Class5.ToString();
         }
+        /// <summary>
+        /// modifies user based on the changes to the text boxes then saves changes
+        /// </summary>
+        /// <param name="student"></param>
         public void modifyCommit(Student student)
         {
             student.FirstName = textBoxFirstName.Text;
@@ -53,6 +61,11 @@ namespace ProjectTeam09
                 MessageBox.Show("An error has occured when updating this Professor. " + exception);
             }
         }
+        /// <summary>
+        /// assigns values and checks if the text box has a value
+        /// </summary>
+        /// <param name="textBox"></param>
+        /// <param name="classId"></param>
         private void TestTextBox(TextBox textBox, int? classId)
         {
             if (textBox.Text != "")

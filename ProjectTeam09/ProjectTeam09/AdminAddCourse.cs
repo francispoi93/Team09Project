@@ -18,9 +18,14 @@ namespace ProjectTeam09
             InitializeComponent();
             buttonCourseAdd.Click += (s, e) => addCourse();
         }
+        /// <summary>
+        /// adds a course to the database based on the text boxes and saves changes
+        /// </summary>
         public void addCourse() {
+            //makes sure text boxes arent empty because they are all essential to the course information
             if (textBoxClassProfessor.Text != "" && textBoxCourseSection.Text!= "" && textBoxClassSize.Text != "" && textBoxCourseID.Text != "" && textBoxCourseName.Text != "")
             {
+                //creates a new course with the textboxes
                 Course newCourse = new Course
                 {
                     CourseId = Int32.Parse(textBoxCourseID.Text),
@@ -29,6 +34,7 @@ namespace ProjectTeam09
                     MaxCourseSize = Int32.Parse(textBoxClassSize.Text),
                     Professor = context.Professors.Find(Int32.Parse(textBoxClassProfessor.Text)),
                 };
+                //adds and saves changes
                 context.Courses.Add(newCourse);
                 context.SaveChanges();
                 this.Close();
