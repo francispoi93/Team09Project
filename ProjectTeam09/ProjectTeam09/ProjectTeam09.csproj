@@ -189,6 +189,9 @@
     <EmbeddedResource Include="AdminProfessorModify.resx">
       <DependentUpon>AdminProfessorModify.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminProfessorReport.resx">
+      <DependentUpon>AdminProfessorReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminStudentModify.resx">
       <DependentUpon>AdminStudentModify.cs</DependentUpon>
     </EmbeddedResource>
