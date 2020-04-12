@@ -20,6 +20,9 @@ namespace ProjectTeam09
             dataGridViewProfessors.MultiSelect = false;
             dataGridViewStudents.MultiSelect = false;
             dataGridViewAdmins.MultiSelect = false;
+            dataGridViewAdmins.ReadOnly = true;
+            dataGridViewProfessors.ReadOnly = true;
+            dataGridViewStudents.ReadOnly = true;
             InitializeStudentGridView();
             InitializeProfessorGridView();
             InitializeAdminGridView();
