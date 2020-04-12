@@ -49,7 +49,6 @@ namespace ProjectTeam09
             dataGridViewProfGrades.Refresh();
             
         }
-<<<<<<< HEAD
         /*
         private void ButtonViewGrades_Click(object sender, EventArgs e)
         {
@@ -90,9 +89,6 @@ namespace ProjectTeam09
             }
             */
         
-
-=======
->>>>>>> master
         /// <summary>
         /// Initializes datagrid based on the selected class. Filters only through grades associated with the class.
         /// </summary>
