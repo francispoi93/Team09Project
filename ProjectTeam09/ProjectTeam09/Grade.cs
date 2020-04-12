@@ -9,7 +9,7 @@ namespace ProjectTeam09
     public partial class Grade
     {        
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Key]
+        public int Id { get; set; }
         public int StudentId { get; set; }
 
         public int CourseId { get; set; }

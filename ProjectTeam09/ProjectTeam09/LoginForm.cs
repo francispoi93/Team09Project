@@ -94,7 +94,7 @@ namespace ProjectTeam09
              }
              else
              {
-                 MessageBox.Show("your password is incorrect real password is" + user.Password);
+                 MessageBox.Show("your password is incorrect real password is " + user.Password);
              }
         }
         /// <summary>

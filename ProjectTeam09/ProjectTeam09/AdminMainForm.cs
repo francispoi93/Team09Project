@@ -30,9 +30,13 @@ namespace ProjectTeam09
         /// </summary>
         public void BackupDataSetToXML()
         {
+<<<<<<< HEAD
            //this uses linq and some XML classes to construct the architecture then fills in the values from the database
             XElement backup = new XElement("StudentDirectory", 
                 new XElement("Admins",
+=======
+            XElement backup = new XElement("StudentDirectory", 
+>>>>>>> master
                 (from admin in context.Admin
                 select new
                 {

@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>ProjectTeam09</RootNamespace>
     <AssemblyName>ProjectTeam09</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -129,6 +129,12 @@
     <Compile Include="ProfessorAdContentForm.Designer.cs">
       <DependentUpon>ProfessorAdContentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProfessorAddGradeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfessorAddGradeForm.Designer.cs">
+      <DependentUpon>ProfessorAddGradeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProfessorModifyGradesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     <EmbeddedResource Include="AdminProfessorModify.resx">
       <DependentUpon>AdminProfessorModify.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminProfessorReport.resx">
+      <DependentUpon>AdminProfessorReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminStudentModify.resx">
       <DependentUpon>AdminStudentModify.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProfessorAdContentForm.resx">
       <DependentUpon>ProfessorAdContentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfessorAddGradeForm.resx">
+      <DependentUpon>ProfessorAddGradeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProfessorMainForm.resx">
       <DependentUpon>ProfessorMainForm.cs</DependentUpon>
