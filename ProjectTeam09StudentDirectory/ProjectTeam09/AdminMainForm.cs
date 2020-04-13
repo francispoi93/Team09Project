@@ -117,7 +117,7 @@ namespace ProjectTeam09
                    new XAttribute("ProfessorId",x.ProfessorId),
                    new XAttribute("Section",x.Section),
                    new XAttribute("MaxCourseSize",x.MaxCourseSize),
-                   new XAttribute("DocumentsFolder",x.DocumentsFolder)
+                   new XAttribute("DocumentsFolder",x.DocumentsFolder ?? System.IO.Path.GetFullPath(Application.StartupPath).ToString())
                    ))),
                 new XElement("UserCredentials",
                 (from user in context.UserCredentials
